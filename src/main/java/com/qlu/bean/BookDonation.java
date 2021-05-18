@@ -64,4 +64,9 @@ public class BookDonation {
      */
     private Integer status;
 
+    /*
+     *  书籍数量 默认为1
+     * */
+    private Integer bookCount;
+
 }

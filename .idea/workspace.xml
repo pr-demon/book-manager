@@ -1,8 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e3ea2309-1eb5-4be2-90d0-a3595aadfd5a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/de698d1e-51d0-462b-9676-8fdd2337f2a9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_34.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/book_manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/book_manager.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/book.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/book.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qlu/bean/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qlu/bean/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qlu/bean/BookDonation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qlu/bean/BookDonation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qlu/bean/BorrowInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qlu/bean/BorrowInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qlu/bean/vo/BorrowInfoAndBookVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qlu/bean/vo/BorrowInfoAndBookVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qlu/common/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qlu/common/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qlu/controller/BookDonationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qlu/controller/BookDonationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qlu/controller/FrontBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qlu/controller/FrontBookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qlu/controller/admin/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qlu/controller/admin/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qlu/controller/admin/BorrowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qlu/controller/admin/BorrowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qlu/mapper/BorrowInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qlu/mapper/BorrowInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qlu/service/IBorrowInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qlu/service/IBorrowInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qlu/service/impl/BorrowInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qlu/service/impl/BorrowInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/_fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/_fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/book/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/book/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/book/bookDonationList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/book/bookDonationList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/borrow/orderInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/borrow/orderInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/user/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/user/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/book/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/book/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bookDonation/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookDonation/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bookDonation/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookDonation/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/muban.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/muban.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/borrowList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/borrowList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/editPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/editPassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/editUserInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/editUserInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/historyList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/historyList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qlu/TestMyPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qlu/TestMyPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/BookManagerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/BookManagerApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/bean/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/bean/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/bean/BookDonation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/bean/BookDonation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/bean/BorrowInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/bean/BorrowInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/bean/Discuss.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/bean/Discuss.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/bean/StackRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/bean/StackRoom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/bean/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/bean/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/bean/vo/BorrowInfoAndBookAndUserVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/bean/vo/BorrowInfoAndBookAndUserVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/common/bean/Page.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/common/bean/Page.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/common/config/MyBatisPlusConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/common/config/MyBatisPlusConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/common/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/common/config/WebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/common/intercepter/Levelnterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/common/intercepter/Levelnterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/common/intercepter/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/common/intercepter/LoginInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/common/utils/ImageUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/common/utils/ImageUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/controller/BookDonationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/controller/BookDonationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/controller/FrontBookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/controller/FrontBookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/controller/FrontUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/controller/FrontUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/controller/admin/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/controller/admin/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/controller/admin/BorrowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/controller/admin/BorrowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/controller/admin/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/controller/admin/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/controller/admin/StackRoomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/controller/admin/StackRoomController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/controller/admin/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/controller/admin/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/mapper/BookDonationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/mapper/BookDonationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/mapper/BookMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/mapper/BookMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/mapper/BorrowInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/mapper/BorrowInfoMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/mapper/DiscussMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/mapper/DiscussMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/mapper/StackRoomMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/mapper/StackRoomMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/service/IBookDonationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/service/IBookDonationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/service/IBookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/service/IBookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/service/IBorrowInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/service/IBorrowInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/service/IDiscussService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/service/IDiscussService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/service/IStackRoomService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/service/IStackRoomService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/service/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/service/impl/BookDonationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/service/impl/BookDonationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/service/impl/BookServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/service/impl/BorrowInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/service/impl/BorrowInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/service/impl/DiscussServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/service/impl/DiscussServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/service/impl/StackRoomServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/service/impl/StackRoomServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/qlu/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/qlu/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/_fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/_fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/book/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/book/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/book/bookDonationList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/book/bookDonationList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/borrow/orderInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/borrow/orderInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/user/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/user/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/book/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/book/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bookDonation/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bookDonation/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bookDonation/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bookDonation/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/muban.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/muban.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/borrowList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/borrowList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/editPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/editPassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/editUserInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/editUserInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/historyList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/historyList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/qlu/TestMyPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/qlu/TestMyPage.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,91 +127,148 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dbpw@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="ExecutionTargetDialog">
     <checked>
-      <node key="de698d1e-51d0-462b-9676-8fdd2337f2a9" />
+      <node key="c661f66d-6496-48bd-a539-10ec8ac48eb1" />
     </checked>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/BookManagerApplication.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/controller/FrontBookController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            <state relative-caret-position="-102">
+              <caret line="119" column="17" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/controller/admin/BorrowController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/info.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/bean/vo/BorrowInfoAndBookVo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1296">
+              <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="55" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/book/info.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="173" column="28" selection-start-line="173" selection-start-column="28" selection-end-line="173" selection-end-column="28" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#367#368#0" expanded="true" />
-                <element signature="e#439#440#0" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#script#10;n#div#0;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/mapper/BookDonationMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/controller/BookDonationController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/content.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+            <state relative-caret-position="230">
+              <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/book.sql">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/muban.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="157" column="72" selection-start-line="157" selection-start-column="61" selection-end-line="157" selection-end-column="72" />
+            <state relative-caret-position="-324">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#a#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/de698d1e-51d0-462b-9676-8fdd2337f2a9/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>isBorrowAble</find>
+      <find>gohome</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\Users\Administrator\Desktop\ds\book-manager</dir>
+    </dirStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qlu/bean/Book.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/book/add.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/bookDonation/add.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qlu/bean/BookDonation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qlu/controller/BookDonationController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/book/bookDonationList.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/bookDonation/list.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qlu/controller/admin/BookController.java" />
+        <option value="$PROJECT_DIR$/db/book.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qlu/controller/FrontBookController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qlu/service/impl/BorrowInfoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qlu/service/IBorrowInfoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qlu/bean/BorrowInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/borrow/orderInfo.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qlu/mapper/BorrowInfoMapper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/qlu/TestMyPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qlu/bean/vo/BorrowInfoAndBookVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qlu/controller/admin/BorrowController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/_fragments.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/book/info.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/content.js" />
       </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
@@ -115,55 +277,54 @@
     <option name="width" value="1940" />
     <option name="height" value="1090" />
   </component>
+  <component name="ProjectId" id="1r3HOsl8JGz8QQcNML2NS2NLMgA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="book_manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="book_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="book_manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="book_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="book_manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="book_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="book_manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="book_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="book_manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="book_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="book_manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="book_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="qlu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="book_manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="book_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -171,17 +332,85 @@
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="book_manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="book_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qlu" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qlu" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qlu" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="book-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="book-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="book" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
@@ -189,11 +418,22 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1618195754074" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1621351257704" />
+    <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../1.8" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
@@ -208,15 +448,38 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="BookManagerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+  <component name="RunManager" selected="Spring Boot.BookManagerApplication">
+    <configuration name="TestMyPage.testQuery" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="book_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qlu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.qlu" />
+      <option name="MAIN_CLASS_NAME" value="com.qlu.TestMyPage" />
+      <option name="METHOD_NAME" value="testQuery" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookManagerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
       <module name="book_manager" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.qlu.BookManagerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.BookManagerApplication" />
+        <item itemvalue="JUnit.TestMyPage.testQuery" />
+      </list>
+    </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -228,56 +491,180 @@
       <option name="presentableId" value="Default" />
       <updated>1618194732813</updated>
       <workItem from="1618194741251" duration="968000" />
+      <workItem from="1618197847080" duration="6470000" />
+      <workItem from="1618278498600" duration="10644000" />
+      <workItem from="1618384585048" duration="720000" />
+      <workItem from="1618385666554" duration="804000" />
+      <workItem from="1618449566760" duration="647000" />
+      <workItem from="1618535480275" duration="2327000" />
+      <workItem from="1618904523947" duration="1193000" />
+      <workItem from="1619100316465" duration="559000" />
+      <workItem from="1620302385053" duration="582000" />
+      <workItem from="1620445993751" duration="672000" />
+      <workItem from="1620556119652" duration="1033000" />
+      <workItem from="1620612160972" duration="4225000" />
+      <workItem from="1620634480948" duration="931000" />
+      <workItem from="1620647544555" duration="2400000" />
+      <workItem from="1620713604263" duration="3600000" />
+      <workItem from="1620784432378" duration="12767000" />
+      <workItem from="1620874219498" duration="248000" />
+      <workItem from="1620881857468" duration="1182000" />
+      <workItem from="1620959219718" duration="579000" />
+      <workItem from="1621126106619" duration="583000" />
+      <workItem from="1621319959945" duration="161000" />
+      <workItem from="1621320152073" duration="16115000" />
+      <workItem from="1621337933920" duration="4702000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="TestMyPage_testQuery - 2021.05.18 at 17h 22m 05s.xml">
+      <configuration name="TestMyPage.testQuery" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestMyPage_testQuery - 2021.05.18 at 17h 24m 40s.xml">
+      <configuration name="TestMyPage.testQuery" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestMyPage_testQuery - 2021.05.18 at 17h 25m 27s.xml">
+      <configuration name="TestMyPage.testQuery" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestMyPage_testQuery - 2021.05.18 at 17h 55m 30s.xml">
+      <configuration name="TestMyPage.testQuery" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestMyPage_testQuery - 2021.05.18 at 18h 24m 04s.xml">
+      <configuration name="TestMyPage.testQuery" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="968000" />
+    <option name="totallyTimeSpent" value="21946000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Capture Tool" />
-      <window_info id="Web" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1152815" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16353887" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Style Checker" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Tool Output" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.45576409" />
-      <window_info anchor="bottom" id="Java Enterprise" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="ANTLR Preview" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.71849865" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.04021448" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2627346" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Style Checker" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Tool Output" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="16" />
+      <window_info anchor="bottom" id="Messages" order="17" weight="0.34048256" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.0422252" />
+      <window_info anchor="right" id="SciView" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23324397" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.230563" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" visible="true" weight="0.08042896" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Style Checker" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Tool Output" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="16" />
+      <window_info anchor="bottom" id="Messages" order="17" weight="0.45576409" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.0422252" />
+      <window_info anchor="right" id="SciView" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/qlu/controller/admin/BookController.java</url>
+          <line>126</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/mapper/BookDonationMapper.java">
@@ -290,10 +677,13 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/de698d1e-51d0-462b-9676-8fdd2337f2a9/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/BookManagerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        <state relative-caret-position="124">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#367#368#0" expanded="true" />
@@ -302,27 +692,327 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/mapper/BookMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5aa1394b-89ff-4cd4-8f89-12f000589aa7/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c661f66d-6496-48bd-a539-10ec8ac48eb1/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/bean/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/book/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="84" column="24" lean-forward="true" selection-start-line="84" selection-start-column="24" selection-end-line="90" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/bean/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="74" selection-start-line="74" selection-end-line="77" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/bean/BookDonation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/bookDonation/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="88" column="38" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/bookDonation/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="118" column="54" selection-start-line="118" selection-start-column="54" selection-end-line="118" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/book/bookDonationList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1775">
+          <caret line="194" column="54" lean-forward="true" selection-start-line="194" selection-end-line="195" />
+          <folding>
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/controller/BookDonationController.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-extension/3.3.1.tmp/mybatis-plus-extension-3.3.1.tmp.jar!/com/baomidou/mybatisplus/extension/service/IService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+          <folding>
+            <element signature="e#2701#2702#0" expanded="true" />
+            <element signature="e#2782#2783#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/controller/admin/BookController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/service/impl/StackRoomServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/service/impl/DiscussServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/service/impl/BookServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/service/impl/BookDonationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/controller/FrontBorrowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-776">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qlu/Test111.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-384">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qlu/TestFenYe.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qlu/TestImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/borrow/borrowInfo.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/de698d1e-51d0-462b-9676-8fdd2337f2a9/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/book.sql">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-extension/3.3.1.tmp/mybatis-plus-extension-3.3.1.tmp.jar!/com/baomidou/mybatisplus/extension/plugins/pagination/Page.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="157" column="72" selection-start-line="157" selection-start-column="61" selection-end-line="157" selection-end-column="72" />
+        <state relative-caret-position="167">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#1284#1285#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.2.0.RELEASE/spring-aop-5.2.0.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+        <state relative-caret-position="150">
+          <caret line="480" selection-start-line="480" selection-end-line="480" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/mapper/BorrowInfoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="35" column="47" lean-forward="true" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/bean/BorrowInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/borrow/orderInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="116" column="37" lean-forward="true" selection-start-line="116" selection-start-column="37" selection-end-line="116" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/service/IBorrowInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/service/impl/BorrowInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="36" column="61" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/common/bean/Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/qlu/TestMyPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="33" column="28" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/bean/vo/BorrowInfoAndBookAndUserVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/bean/vo/BorrowInfoAndBookVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="55" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/book.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="141" lean-forward="true" selection-start-line="96" selection-end-line="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/controller/admin/BorrowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/info.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qlu/controller/FrontBookController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="119" column="17" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/muban.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/_fragments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="837">
+          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/book/info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="173" column="28" selection-start-line="173" selection-start-column="28" selection-end-line="173" selection-end-column="28" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#10;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
         </state>
       </provider>
     </entry>

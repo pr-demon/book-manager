@@ -32,24 +32,25 @@ CREATE TABLE `book`  (
   `picture` varchar(123) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '书籍图片',
   `srid` int(11) NULL DEFAULT NULL COMMENT '书库id',
   `is_borrow` int(2) NULL DEFAULT NULL COMMENT '是否已经被借出（1是预约，2是借出）',
+  `book_count` int(11) NOT NULL DEFAULT 1 COMMENT '书籍数量',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of book
 -- ----------------------------
-INSERT INTO `book` VALUES (1, '操作系统', '张老师', '2020-03-17 00:00:00', '计算机入门必学,计算机大牛必精', '基础', 0, '/pic/5c3ba4fa-5abd-475c-806d-77bc6fa724dc.jpg', 2, 0);
-INSERT INTO `book` VALUES (2, '计算机网络', '唐老师', '2020-03-17 00:00:00', '计算机入门必学', '认知', 0, '/pic/50c17c28-5bee-4514-9f80-c3b484c5adce.jpg', 2, 0);
-INSERT INTO `book` VALUES (3, 'Thinking In Java', '高司令', '2020-03-18 00:00:00', '四大名著', 'Java', 1, '/pic/069c9097-6764-4617-ad9c-b57c64d6d161.jpg', 7, 0);
-INSERT INTO `book` VALUES (7, 'Effective Java', '乔治', '2020-01-06 12:31:35', 'Java四大名著', 'Java', 0, '/pic/aecafa73-f80b-444e-98c3-18ee2ae067cf.jpg', 1, 0);
-INSERT INTO `book` VALUES (8, 'C++ primer plus', '林纳斯', '2020-03-10 00:00:00', '我最年长', '技术', 0, '/pic/library.jpg', 7, 0);
-INSERT INTO `book` VALUES (9, 'php', '皮特', '2020-03-03 12:33:03', '世界上最好的语言', '技术', 3, '/pic/library.jpg', 2, 0);
-INSERT INTO `book` VALUES (10, 'python', '詹姆士', '2020-03-02 12:33:07', '蟒蛇语言', '基础', 3, '/pic/library.jpg', 1, 2);
-INSERT INTO `book` VALUES (11, 'go', '李老师', '2020-03-01 12:33:11', '微服务我来搞', '基础', 1, '/pic/library.jpg', 7, 0);
-INSERT INTO `book` VALUES (12, 'javascript', '隔壁老王', '2020-03-01 12:33:16', '浏览器上的霸主', '提升', 2, '/pic/library.jpg', 2, 1);
-INSERT INTO `book` VALUES (14, '人类简史', '赫拉利', '2018-01-01 00:00:00', '人类历史长河中的兴衰荣辱', '历史', 0, '/pic/library.jpg', 2, 0);
-INSERT INTO `book` VALUES (15, '张宇18讲', '张宇', '2019-01-16 00:00:00', '跟宇哥考研...Happy', '考研', 0, '/pic/library.jpg', 7, 0);
-INSERT INTO `book` VALUES (16, '人类简史', '赫拉利', '2018-01-01 00:00:00', '人类历史长河中的兴衰荣辱', '历史', 0, '/pic/library.jpg', 7, 0);
+INSERT INTO `book` VALUES (1, '操作系统', '张老师', '2020-03-17 00:00:00', '计算机入门必学,计算机大牛必精', '基础', 0, '/pic/5c3ba4fa-5abd-475c-806d-77bc6fa724dc.jpg', 2, 0, 1);
+INSERT INTO `book` VALUES (2, '计算机网络', '唐老师', '2020-03-17 00:00:00', '计算机入门必学', '认知', 0, '/pic/50c17c28-5bee-4514-9f80-c3b484c5adce.jpg', 2, 0, 1);
+INSERT INTO `book` VALUES (3, 'Thinking In Java', '高司令', '2020-03-18 00:00:00', '四大名著', 'Java', 1, '/pic/069c9097-6764-4617-ad9c-b57c64d6d161.jpg', 7, 0, 1);
+INSERT INTO `book` VALUES (7, 'Effective Java', '乔治', '2020-01-06 12:31:35', 'Java四大名著', 'Java', 0, '/pic/aecafa73-f80b-444e-98c3-18ee2ae067cf.jpg', 1, 0, 1);
+INSERT INTO `book` VALUES (8, 'C++ primer plus', '林纳斯', '2020-03-10 00:00:00', '我最年长', '技术', 0, '/pic/library.jpg', 7, 0, 1);
+INSERT INTO `book` VALUES (9, 'php', '皮特', '2020-03-03 12:33:03', '世界上最好的语言', '技术', 3, '/pic/library.jpg', 2, 0, 1);
+INSERT INTO `book` VALUES (10, 'python', '詹姆士', '2020-03-02 12:33:07', '蟒蛇语言', '基础', 3, '/pic/library.jpg', 1, 2, 1);
+INSERT INTO `book` VALUES (11, 'go', '李老师', '2020-03-01 12:33:11', '微服务我来搞', '基础', 1, '/pic/library.jpg', 7, 0, 1);
+INSERT INTO `book` VALUES (12, 'javascript', '隔壁老王', '2020-03-01 12:33:16', '浏览器上的霸主', '提升', 2, '/pic/library.jpg', 2, 1, 1);
+INSERT INTO `book` VALUES (14, '人类简史', '赫拉利', '2018-01-01 00:00:00', '人类历史长河中的兴衰荣辱', '历史', 0, '/pic/library.jpg', 2, 0, 1);
+INSERT INTO `book` VALUES (15, '张宇18讲', '张宇', '2019-01-16 00:00:00', '跟宇哥考研...Happy', '考研', 0, '/pic/library.jpg', 7, 0, 1);
+INSERT INTO `book` VALUES (16, '人类简史', '赫拉利', '2018-01-01 00:00:00', '人类历史长河中的兴衰荣辱', '历史', 0, '/pic/library.jpg', 7, 0, 1);
 
 -- ----------------------------
 -- Table structure for book_donation
@@ -65,15 +66,16 @@ CREATE TABLE `book_donation`  (
   `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `picture` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `status` int(255) NULL DEFAULT NULL,
+  `book_count` int(11) NOT NULL DEFAULT 1 COMMENT '书籍数量',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of book_donation
 -- ----------------------------
-INSERT INTO `book_donation` VALUES (1, 5, '人类简史', '赫拉利', '2018-01-01 00:00:00', '人类历史长河中的兴衰荣辱', '历史', '/pic/library.jpg', 1);
-INSERT INTO `book_donation` VALUES (2, 5, '张宇18讲', '张宇', '2019-01-16 00:00:00', '跟宇哥考研...Happy', '考研', '/pic/library.jpg', 1);
-INSERT INTO `book_donation` VALUES (3, 5, '人类简史', '赫拉利', '2018-01-01 00:00:00', '人类历史长河中的兴衰荣辱', '历史', '/pic/library.jpg', 1);
+INSERT INTO `book_donation` VALUES (1, 5, '人类简史', '赫拉利', '2018-01-01 00:00:00', '人类历史长河中的兴衰荣辱', '历史', '/pic/library.jpg', 1, 1);
+INSERT INTO `book_donation` VALUES (2, 5, '张宇18讲', '张宇', '2019-01-16 00:00:00', '跟宇哥考研...Happy', '考研', '/pic/library.jpg', 1, 1);
+INSERT INTO `book_donation` VALUES (3, 5, '人类简史', '赫拉利', '2018-01-01 00:00:00', '人类历史长河中的兴衰荣辱', '历史', '/pic/library.jpg', 1, 1);
 
 -- ----------------------------
 -- Table structure for borrow_info
@@ -85,18 +87,18 @@ CREATE TABLE `borrow_info`  (
   `bid` int(11) NULL DEFAULT NULL COMMENT '书id',
   `borrow_time` datetime(0) NULL DEFAULT NULL COMMENT '借书时间',
   `return_time` datetime(0) NULL DEFAULT NULL COMMENT '归还时间',
-  `is_return` int(11) NULL DEFAULT NULL COMMENT '是否归还',
+  `is_return` int(11) NULL DEFAULT -1 COMMENT '归还信息',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of borrow_info
 -- ----------------------------
-INSERT INTO `borrow_info` VALUES (1, 4, 10, '2020-03-20 15:30:21', '2020-04-03 15:30:23', 0);
-INSERT INTO `borrow_info` VALUES (2, 5, 11, '2020-03-20 15:58:37', '2020-03-21 16:38:57', 1);
-INSERT INTO `borrow_info` VALUES (3, 5, 8, '2020-02-06 13:57:21', '2020-02-20 13:57:26', 1);
-INSERT INTO `borrow_info` VALUES (4, 5, 12, '2020-03-21 21:52:13', '2020-04-11 21:52:13', 0);
-INSERT INTO `borrow_info` VALUES (5, 5, 3, '2020-03-22 09:26:57', '2020-03-22 09:27:47', 1);
+# INSERT INTO `borrow_info` VALUES (1, 4, 10, '2020-03-20 15:30:21', '2020-04-03 15:30:23', 0);
+# INSERT INTO `borrow_info` VALUES (2, 5, 11, '2020-03-20 15:58:37', '2020-03-21 16:38:57', 1);
+# INSERT INTO `borrow_info` VALUES (3, 5, 8, '2020-02-06 13:57:21', '2020-02-20 13:57:26', 1);
+# INSERT INTO `borrow_info` VALUES (4, 5, 12, '2020-03-21 21:52:13', '2020-04-11 21:52:13', 0);
+# INSERT INTO `borrow_info` VALUES (5, 5, 3, '2020-03-22 09:26:57', '2020-03-22 09:27:47', 1);
 
 -- ----------------------------
 -- Table structure for discuss

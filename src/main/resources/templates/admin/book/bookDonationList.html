@@ -184,11 +184,15 @@
                 { field: "author", title: "作者" },
                 { field:"publishDate", title: "出版日期",
                     formatter:function (value,row,index) {
+                    if(value== null){
+                        return "未设置出版日期";
+                    }
                         return value.substr(0,10);
                     }
                 },
                 { field: "info", title: "简介" },
                 { field: "type", title: "类型" },
+                { field: "bookCount", title: "图书数量" },
                 { title: "操作",
                     formatter: function (value, row, index) {
                         let agree = "<button type='button' class='btn btn-primary' id='agree' >通过</button>";

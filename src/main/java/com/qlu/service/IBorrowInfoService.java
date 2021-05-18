@@ -18,4 +18,8 @@ public interface IBorrowInfoService extends IService<BorrowInfo> {
 
     Page<BorrowInfoAndBookAndUserVo> getBorrowInfoAndBookAndUser(Page<BorrowInfoAndBookAndUserVo> page, Integer isReturn, Integer isBorrow);
 
+    /*
+     *   获取所有正在预约中的信息
+     * */
+    Page<BorrowInfoAndBookAndUserVo> getBorrowCheckBookInfo(Page<BorrowInfoAndBookAndUserVo> page, Integer borrowCheckTime);
 }

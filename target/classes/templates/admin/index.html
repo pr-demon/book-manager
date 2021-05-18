@@ -34,7 +34,7 @@
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
                                <span class="block m-t-xs"><strong class="font-bold" th:text="${session.user.username}"></strong></span>
-                                <span class="text-muted text-xs block"> <span th:text="${session.user.level==1?'管理员':'超级管理员'}"></span> <b class="caret"></b></span>
+                                <span class="text-muted text-xs block"> <span th:text="${session.user.level==1?'图书管理员':'系统管理员'}"></span> <b class="caret"></b></span>
                                 </span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -59,7 +59,8 @@
                     </ul>
 
                 </li>
-                <li>
+
+                    <li th:if="${session.user.level==1}">
                     <a href="#">
                         <i class="fa fa-columns"></i>
                         <span class="nav-label">图书借阅管理</span>
@@ -76,11 +77,12 @@
                             <a class="J_menuItem" target="iframe0" th:href="@{/admin/borrow/returnInfo}" href="book/list.html">归还信息</a>
                         </li>
                     </ul>
-                </li>
-                <li>
+                 </li>
+
+                <li th:if="${session.user.level==1}">
                     <a href="#">
                         <i class="fa fa-columns"></i>
-                        <span class="nav-label">书籍管理</span>
+                        <span class="nav-label">图书管理</span>
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
@@ -91,11 +93,29 @@
                             <a class="J_menuItem" target="iframe0" th:href="@{/admin/book/list}" href="book/list.html">图书列表</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" target="iframe0" th:href="@{/admin/book/bookDonationList}" href="book/list.html">书籍捐赠</a>
+                            <a class="J_menuItem" target="iframe0" th:href="@{/admin/book/bookDonationList}" href="book/list.html">图书捐赠</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+<!--                <li>-->
+<!--                    <a href="#">-->
+<!--                        <i class="fa fa-columns"></i>-->
+<!--                        <span class="nav-label">书籍管理</span>-->
+<!--                        <span class="fa arrow"></span>-->
+<!--                    </a>-->
+<!--                    <ul class="nav nav-second-level">-->
+<!--                        <li>-->
+<!--                            <a class="J_menuItem" target="iframe0" th:href="@{/admin/book/add}" href="book/add.html" data-index="0">添加图书</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a class="J_menuItem" target="iframe0" th:href="@{/admin/book/list}" href="book/list.html">图书列表</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a class="J_menuItem" target="iframe0" th:href="@{/admin/book/bookDonationList}" href="book/list.html">书籍捐赠</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+                <li th:if="${session.user.level==1}">
                     <a href="#">
                         <i class="fa fa-columns"></i>
                         <span class="nav-label">书库管理</span>
@@ -118,7 +138,7 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" target="iframe0" th:href="@{/admin/user/add}">添加管理员</a>
+                            <a class="J_menuItem" target="iframe0" th:href="@{/admin/user/add}">添加图书管理员</a>
                         </li>
                         <li>
                             <a class="J_menuItem" target="iframe0" th:href="@{admin/user/list}" >用户列表</a>

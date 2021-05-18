@@ -7808,28 +7808,28 @@ body.skin-3 {
 
 /*GO HOME*/
 
-.gohome {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 100;
-}
+/*.gohome {*/
+    /*position: fixed;*/
+    /*top: 20px;*/
+    /*right: 20px;*/
+    /*z-index: 100;*/
+/*}*/
 
-.gohome a {
-    height: 38px;
-    width: 38px;
-    display: block;
-    background: #2f4050;
-    padding: 9px 8px;
-    text-align: center;
-    color: #fff;
-    border-radius: 50%;
-    opacity: .5;
-}
+/*.gohome a {*/
+    /*height: 38px;*/
+    /*width: 38px;*/
+    /*display: block;*/
+    /*background: #2f4050;*/
+    /*padding: 9px 8px;*/
+    /*text-align: center;*/
+    /*color: #fff;*/
+    /*border-radius: 50%;*/
+    /*opacity: .5;*/
+/*}*/
 
-.gohome a:hover {
-    opacity: 1;
-}
+/*.gohome a:hover {*/
+    /*opacity: 1;*/
+/*}*/
 
 @media only screen and (-webkit-min-device-pixel-ratio : 2){
     #content-main {

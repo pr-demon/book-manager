@@ -72,4 +72,9 @@ public class Book {
      */
     private Integer isBorrow;
 
+    /*
+    *  书籍数量 默认为1
+    * */
+    private Integer bookCount;
+
 }

@@ -15,6 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BorrowInfo {
+    public static int BORROW_CHECK_TIME = 1;
 
     /**
      * id
@@ -43,7 +44,10 @@ public class BorrowInfo {
     private Date returnTime;
 
     /**
-     * 是否归还
+     * 书籍归还信息
+     * -1：  默认值，用户已经预约，正在等待管理员审核
+     *  0：  用户还未还书
+     *  1：  用户已经还书
      */
     private Integer isReturn;
 

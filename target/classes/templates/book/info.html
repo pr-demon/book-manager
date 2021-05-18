@@ -54,9 +54,10 @@
                             </div>
                             </p>
                             <p>
-                                <button th:if="${bookInfo.isBorrow} eq '2'" disabled role="button" class="btn btn-primary btn-lg">已经借出</button>
-                                <button th:if="${bookInfo.isBorrow} eq '1'" disabled role="button" class="btn btn-primary btn-lg">已被预约</button>
-                                <button th:if="${bookInfo.isBorrow} eq '0'" role="button" id="borrowBtn" class="btn btn-primary btn-lg">预约</button>
+                                <button th:if="${isBorrowAble} eq '-1'" disabled role="button" class="btn btn-primary btn-lg">您已借阅该书</button>
+                                <button th:if="${isBorrowAble} eq '-2'" disabled role="button" class="btn btn-primary btn-lg">您已预约该书</button>
+                                <button th:if="${isBorrowAble} eq '-3'" disabled role="button" class="btn btn-primary btn-lg">该书的借阅量已经达到最大值</button>
+                                <button th:if="${isBorrowAble} eq '0'" role="button" id="borrowBtn" class="btn btn-primary btn-lg">预约</button>
                             </p>
                             <p  >
                                 <div th:if="${bookInfo.isBorrow} gt '0'" class="alert alert-success">
@@ -179,6 +180,7 @@
             </div>
         </div>
 
+        </div>
     </div>
 </div>
 
@@ -259,11 +261,13 @@
             },
             dataType:"text",
             success:function (msg) {
+                console.log("图书预约结果: ");
+                console.log(msg);
                 if (msg=='success'){
                     //成功
                     window.location.href="/book/info?id="+$("#bid").val();
                 }else {
-                    alert("您的预约书籍过多！请仔细对待每一本书哦！");
+                    alert("预约图书失败！");
                 }
             }
         });

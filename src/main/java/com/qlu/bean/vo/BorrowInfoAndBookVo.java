@@ -54,4 +54,7 @@ public class BorrowInfoAndBookVo extends BorrowInfo {
      * 是否已经被借出 2是借出,1是预约，0是未借出
      */
     private Integer isBorrow;
+
+    private Integer bookCount;
+
 }

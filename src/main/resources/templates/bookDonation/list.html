@@ -38,9 +38,9 @@
 
         <!--脚部-->
         <div class="footer">
-            <div class="pull-right">
-                By：<a href="http://www.baidu.com" target="_blank">百度一下，你就知道</a>
-            </div>
+<!--            <div class="pull-right">-->
+<!--                By：<a href="http://www.baidu.com" target="_blank">百度一下，你就知道</a>-->
+<!--            </div>-->
             <div>
                 <strong>Copyright</strong>
             </div>
@@ -108,11 +108,15 @@
                 { field: "author", title: "作者" },
                 { field:"publishDate", title: "出版日期",
                     formatter:function (value,row,index) {
+                        if (value == null){
+                            return "未设置出版日期";
+                        }
                         return value.substr(0,10);
                     }
                 },
                 { field: "info", title: "简介" },
                 { field: "type", title: "类型" },
+                { field: "bookCount", title: "图书数量" },
                 { field:"status", title: "状态",
                     formatter:function (value,row,index) {
                         return value==0?'已申请':'已上架';
@@ -123,7 +127,7 @@
 </script>
 
 <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
-<!--统计代码，可删除-->
+
 
 </body>
 

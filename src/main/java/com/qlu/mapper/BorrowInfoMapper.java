@@ -29,4 +29,13 @@ public interface BorrowInfoMapper extends BaseMapper<BorrowInfo> {
                                                                  @Param("isReturn") Integer isReturn,
                                                                  @Param("isBorrow") Integer isBorrow);
 
+
+    @Select("select borrow_info.*,user.username,user.email,user.phone,user.level," +
+            "book.book_name,book.author,book.publish_date,book.info,book.type,book.book_count," +
+            "book.borrow_times,book.picture,book.srid,book.is_borrow" +
+            " from borrow_info,book,user where borrow_info.bid=book.id and " +
+            "borrow_info.uid=user.id and borrow_info.is_return=-1 and datediff(now(), borrow_time) <= #{borrowCheckTime}" )
+    List<BorrowInfoAndBookAndUserVo> getBorrowCheckBookInfo(Page<BorrowInfoAndBookAndUserVo> pagination,
+                                                                 @Param("borrowCheckTime") Integer borrowCheckTime);
+
 }

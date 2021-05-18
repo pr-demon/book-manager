@@ -27,4 +27,13 @@ public class BorrowInfoServiceImpl extends ServiceImpl<BorrowInfoMapper, BorrowI
     public Page<BorrowInfoAndBookAndUserVo> getBorrowInfoAndBookAndUser(Page<BorrowInfoAndBookAndUserVo> page, Integer isReturn, Integer isBorrow) {
         return page.setRecords(this.baseMapper.getBorrowInfoAndBookAndUser(page,isReturn,isBorrow));
     }
+
+
+    /*
+    *   获取所有正在预约中的信息
+    * */
+    @Override
+    public Page<BorrowInfoAndBookAndUserVo> getBorrowCheckBookInfo(Page<BorrowInfoAndBookAndUserVo> page, Integer borrowCheckTime){
+        return page.setRecords(this.baseMapper.getBorrowCheckBookInfo(page, borrowCheckTime));
+    }
 }

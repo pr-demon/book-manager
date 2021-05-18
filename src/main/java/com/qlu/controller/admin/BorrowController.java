@@ -1,5 +1,6 @@
 package com.qlu.controller.admin;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.qlu.bean.Book;
 import com.qlu.bean.BorrowInfo;
 import com.qlu.bean.vo.BorrowInfoAndBookAndUserVo;
@@ -24,43 +25,47 @@ public class BorrowController {
     private IBorrowInfoService borrowInfoService;
 
     @GetMapping("/borrowInfo")
-    public String to_borrowInfo(){
+    public String to_borrowInfo() {
         return "/admin/borrow/borrowInfo";
     }
 
     @GetMapping("/orderInfo")
-    public String to_orderInfo(){
+    public String to_orderInfo() {
         return "/admin/borrow/orderInfo";
     }
 
     @GetMapping("/returnInfo")
-    public String to_returnInfo(){
+    public String to_returnInfo() {
         return "/admin/borrow/returnInfo";
     }
+
+
     //0 , 1 预约,
     //1 , 0 归还,
     //0 , 2 正被借的
     @RequestMapping("/showBorrowList")
     @ResponseBody
-    public Page<BorrowInfoAndBookAndUserVo> showBorrowList(@RequestParam(defaultValue = "1") int pageNum,@RequestParam(defaultValue = "5") int pageSize){
+    public Page<BorrowInfoAndBookAndUserVo> showBorrowList(@RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "5") int pageSize) {
         return new Page<>(pageSize,
                 borrowInfoService.getBorrowInfoAndBookAndUser(new com.baomidou.mybatisplus.extension.plugins.pagination.Page<BorrowInfoAndBookAndUserVo>(pageNum, pageSize),
                         0,
                         2));
     }
 
+    /*
+    *   获取所有当前正在预约的图书信息
+    * */
     @RequestMapping("/showOrderList")
     @ResponseBody
-    public Page<BorrowInfoAndBookAndUserVo> showOrderList(@RequestParam(defaultValue = "1") int pageNum,@RequestParam(defaultValue = "5") int pageSize){
+    public Page<BorrowInfoAndBookAndUserVo> showOrderList(@RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "5") int pageSize) {
         return new Page<>(pageSize,
-                borrowInfoService.getBorrowInfoAndBookAndUser(new com.baomidou.mybatisplus.extension.plugins.pagination.Page<BorrowInfoAndBookAndUserVo>(pageNum, pageSize),
-                        0,
-                        1));
+                borrowInfoService.getBorrowCheckBookInfo(new com.baomidou.mybatisplus.extension.plugins.pagination.Page<BorrowInfoAndBookAndUserVo>(pageNum, pageSize),
+                        BorrowInfo.BORROW_CHECK_TIME));
     }
 
     @RequestMapping("/showReturnList")
     @ResponseBody
-    public Page<BorrowInfoAndBookAndUserVo> showReturnList(@RequestParam(defaultValue = "1") int pageNum,@RequestParam(defaultValue = "5") int pageSize){
+    public Page<BorrowInfoAndBookAndUserVo> showReturnList(@RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "5") int pageSize) {
         return new Page<>(pageSize,
                 borrowInfoService.getBorrowInfoAndBookAndUser(new com.baomidou.mybatisplus.extension.plugins.pagination.Page<BorrowInfoAndBookAndUserVo>(pageNum, pageSize),
                         1,
@@ -73,20 +78,30 @@ public class BorrowController {
     @RequestMapping("/borrow")
     @ResponseBody
     @Transactional
-    public String borrow(int bid){
+    public String borrow(int bid) {
+        /*
+        *   图书预约成功， bid是borrowinfo表id
+        * */
+        BorrowInfo borrowInfo = borrowInfoService.getById(bid);
+        /* 0 表示借阅成功 */
+        borrowInfo.setIsReturn(0);
+        borrowInfoService.updateById(borrowInfo);
+
+        /*
         //book 改成 2
         Book book = bookService.getById(bid);
         book.setIsBorrow(2);
         //借书成功借阅量加一
-        book.setBorrowTimes(book.getBorrowTimes()+1);
+        book.setBorrowTimes(book.getBorrowTimes() + 1);
         bookService.updateById(book);
+        */
         return "success";
     }
 
     @RequestMapping("/returnBook")
     @ResponseBody
     @Transactional
-    public String returnBook(int id,int bid){
+    public String returnBook(int id, int bid) {
 
         //此条借阅信息更改
         BorrowInfo borrowInfo = borrowInfoService.getById(id);

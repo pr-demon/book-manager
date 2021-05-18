@@ -112,6 +112,7 @@
                     }
                 },
                 { field: "bookName", title: "书籍名" },
+                { field: "bookCount", title: "图书总数量" },
                 { field:"borrowTime", title: "初始借阅时间",
                     formatter:function (value,row,index) {
                         return value.substr(0,10);
@@ -145,7 +146,7 @@
                     type:"post",
                     dataType:"text",
                     data:{
-                        bid:row.bid
+                        bid:row.id
                     },
                     success:function (msg) {
                         console.log(msg);

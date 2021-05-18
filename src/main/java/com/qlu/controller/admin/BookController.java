@@ -81,6 +81,10 @@ public class BookController {
 
     @PostMapping("/add")
     public String add(Book book){
+        // 验证书籍数量
+        if (book.getBookCount() == null || book.getBookCount() < 1){
+            book.setBookCount(1);
+        }
         book.setIsBorrow(0);
         book.setBorrowTimes(0);
         book.setPicture("/pic/library.jpg");
@@ -117,27 +121,25 @@ public class BookController {
     }
 
 
-
     @PostMapping("/editPicture")
     public String editPicture(int id, MultipartFile file){
-        String originalFilename = file.getOriginalFilename();
-        int i = originalFilename.lastIndexOf(".");
-        String suffix = originalFilename.substring(i);
-        String uuid = UUID.randomUUID().toString();
-        String newName = uuid+suffix;
-        File dest = new File("D:/upload/"+newName);
-        if(!dest.getParentFile().exists()){ //判断文件父目录是否存在
-            dest.getParentFile().mkdir();
-        }
-        try {
-
+        try{
+            String originalFilename = file.getOriginalFilename();
+            int i = originalFilename.lastIndexOf(".");
+            String suffix = originalFilename.substring(i);
+            String uuid = UUID.randomUUID().toString();
+            String newName = uuid+suffix;
+            File dest = new File("F:/upload/"+newName);
+            if(!dest.getParentFile().exists()){ //判断文件父目录是否存在
+                dest.getParentFile().mkdir();
+            }
             String saveName = "/pic/"+newName;
             file.transferTo(dest);
             Book book = new Book();
             book.setId(id);
             book.setPicture(saveName);
             bookService.updateById(book);
-            ImageUtils.zoomImage("D:/upload/"+newName,"D:/upload/"+newName,430,500);
+            // ImageUtils.zoomImage("F:/upload/"+newName,"F:/upload/"+newName,430,500);
         }catch (Exception e){
             e.fillInStackTrace();
         }
@@ -180,6 +182,8 @@ public class BookController {
         book.setInfo(bookDonation.getInfo());
         book.setPublishDate(bookDonation.getPublishDate());
         book.setType(bookDonation.getType());
+        // book count
+        book.setBookCount(bookDonation.getBookCount());
 
         bookService.save(book);
         return "/admin/book/bookDonationList";

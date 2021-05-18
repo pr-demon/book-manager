@@ -28,6 +28,11 @@ public class BookDonationController {
 
     @PostMapping("/add")
     public String add(BookDonation bookDonation){
+        // 验证书籍数量
+        if (bookDonation.getBookCount() == null || bookDonation.getBookCount() < 1){
+            bookDonation.setBookCount(1);
+        }
+
         bookDonation.setPicture("/pic/library");
         bookDonation.setStatus(0);
         bookDonationService.save(bookDonation);

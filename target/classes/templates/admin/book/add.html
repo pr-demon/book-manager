@@ -55,14 +55,12 @@
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">类型</label>
-
                             <div class="col-sm-10">
                                 <input type="text" name="type" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">简介</label>
-
                             <div class="col-sm-10">
                                 <textarea type="text" name="info" class="form-control"></textarea>
                             </div>
@@ -77,13 +75,21 @@
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">所属书库</label>
-
                             <div class="col-sm-10">
                                 <select  name="srid" class="form-control">
                                     <option th:each="stackRoom : ${stackRoomList}" th:value="${stackRoom.id}" th:text="|${stackRoom.name}${stackRoom.location}|"></option>
                                 </select>
                             </div>
                         </div>
+
+                        <!-- 书籍数量 -->
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">书籍数量</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="bookCount" class="form-control">
+                            </div>
+                        </div>
+
                         <div class="hr-line-dashed"></div>
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
@@ -161,9 +167,6 @@
         });
     });
 </script>
-
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
-<!--统计代码，可删除-->
 
 </body>
 
