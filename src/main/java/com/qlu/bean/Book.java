@@ -39,7 +39,7 @@ public class Book {
     /**
      * 出版日期
      */
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date publishDate;
 
     /**
@@ -73,8 +73,8 @@ public class Book {
     private Integer isBorrow;
 
     /*
-    *  书籍数量 默认为1
-    * */
+     *  书籍数量 默认为1
+     * */
     private Integer bookCount;
 
 }

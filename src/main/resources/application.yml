@@ -9,8 +9,8 @@ spring:
     cache: false
   # 数据源配置
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/dbpw?serverTimezone=GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dbpw?serverTimezone=GMT&useUnicode=true&characterEncoding=UTF-8
     username: root
     password: root
     hikari:

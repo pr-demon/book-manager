@@ -4,19 +4,20 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 
     <title>书籍移动</title>
-    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
-    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+    <meta content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台" name="keywords">
+    <meta content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术" name="description">
 
-    <link rel="shortcut icon" href="favicon.ico"> <link th:href="@{/css/bootstrap.min.css?v=3.3.6}" rel="stylesheet">
-    <link th:href="@{/css/font-awesome.css?v=4.4.0}" rel="stylesheet">
-    <link th:href="@{/css/plugins/iCheck/custom.css}" rel="stylesheet">
-    <link th:href="@{/css/animate.css}" rel="stylesheet">
-    <link th:href="@{/css/style.css?v=4.1.0}" rel="stylesheet">
-    <link th:href="@{/css/plugins/dropzone/dropzone.css}" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css?v=3.3.6}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.css?v=4.4.0}">
+    <link rel="stylesheet" th:href="@{/css/plugins/iCheck/custom.css}">
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css?v=4.1.0}">
+    <link rel="stylesheet" th:href="@{/css/plugins/dropzone/dropzone.css}">
 
 </head>
 
@@ -37,14 +38,15 @@
                     </div>
                 </div>
                 <div class="ibox-content">
-                    <form method="post" th:action="@{/admin/stackRoom/moveBook}" class="form-horizontal">
+                    <form class="form-horizontal" method="post" th:action="@{/admin/stackRoom/moveBook}">
                         <div class="form-group">
                             <label class="col-sm-2 control-label">选择书库</label>
-                            <input type="hidden" name="fromId" th:value="${stackRoom.id}">
+                            <input name="fromId" th:value="${stackRoom.id}" type="hidden">
                             <div class="col-sm-10">
-                                <select name="toId" class="form-control">
+                                <select class="form-control" name="toId">
                                     <option value="">==请选择您想要将书移动到的位置==</option>
-                                    <option th:each="stackRoom :${stackRoomList}" th:value="${stackRoom.id}" th:text="${stackRoom.name}"></option>
+                                    <option th:each="stackRoom :${stackRoomList}" th:text="${stackRoom.name}"
+                                            th:value="${stackRoom.id}"></option>
                                 </select>
                             </div>
                         </div>
@@ -52,7 +54,7 @@
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
                                 <button class="btn btn-primary" type="submit">移动</button>
-                                <a th:href="@{/admin/stackRoom/list}" class="btn btn-white" type="reset">取消</a>
+                                <a class="btn btn-white" th:href="@{/admin/stackRoom/list}" type="reset">取消</a>
                             </div>
                         </div>
                     </form>
@@ -62,7 +64,7 @@
     </div>
 </div>
 
-<div id="modal-form" class="modal fade" aria-hidden="true">
+<div aria-hidden="true" class="modal fade" id="modal-form">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
@@ -75,17 +77,18 @@
                         <form role="form">
                             <div class="form-group">
                                 <label>用户名：</label>
-                                <input type="email" placeholder="请输入用户名" class="form-control">
+                                <input class="form-control" placeholder="请输入用户名" type="email">
                             </div>
                             <div class="form-group">
                                 <label>密码：</label>
-                                <input type="password" placeholder="请输入密码" class="form-control">
+                                <input class="form-control" placeholder="请输入密码" type="password">
                             </div>
                             <div>
-                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>登录</strong>
+                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit">
+                                    <strong>登录</strong>
                                 </button>
                                 <label>
-                                    <input type="checkbox" class="i-checks">自动登录</label>
+                                    <input class="i-checks" type="checkbox">自动登录</label>
                             </div>
                         </form>
                     </div>
@@ -125,7 +128,7 @@
     });
 </script>
 
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<script charset="UTF-8" src="http://tajs.qq.com/stats?sId=9051096" type="text/javascript"></script>
 <!--统计代码，可删除-->
 
 </body>

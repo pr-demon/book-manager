@@ -13,13 +13,13 @@ layer.ready(function () {
         return false;
     });
 
-    $('#pay-qrcode').click(function(){
-        var html=$(this).html();
+    $('#pay-qrcode').click(function () {
+        var html = $(this).html();
         parent.layer.open({
             title: false,
             type: 1,
-            closeBtn:false,
-            shadeClose:true,
+            closeBtn: false,
+            shadeClose: true,
             area: ['600px', 'auto'],
             content: html
         });

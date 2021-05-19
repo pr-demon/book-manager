@@ -8,6 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan(basePackages = "com.qlu.mapper")
 public class BookManagerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(BookManagerApplication.class,args);
+        SpringApplication.run(BookManagerApplication.class, args);
     }
 }

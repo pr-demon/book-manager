@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -39,78 +38,78 @@ public class FrontBookController {
     @ResponseBody
     public Page<Book> queryList(@RequestParam(defaultValue = "1") int pageNum,
                                 @RequestParam(defaultValue = "8") int pageSize,
-                                Book book){
+                                Book book) {
         System.out.println("=====");
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Book> mybatisPage =
-        new com.baomidou.mybatisplus.extension.plugins.pagination.Page<>(pageNum,pageSize);
+                new com.baomidou.mybatisplus.extension.plugins.pagination.Page<>(pageNum, pageSize);
         QueryWrapper<Book> bookQueryWrapper = new QueryWrapper<>();
-        if (!StringUtils.isEmpty(book.getBookName())){
-            bookQueryWrapper.like("book_name",book.getBookName());
+        if (!StringUtils.isEmpty(book.getBookName())) {
+            bookQueryWrapper.like("book_name", book.getBookName());
         }
-        if (!StringUtils.isEmpty(book.getAuthor())){
-            bookQueryWrapper.like("author",book.getAuthor());
+        if (!StringUtils.isEmpty(book.getAuthor())) {
+            bookQueryWrapper.like("author", book.getAuthor());
         }
-        if (!StringUtils.isEmpty(book.getType())){
-            bookQueryWrapper.like("type",book.getType());
+        if (!StringUtils.isEmpty(book.getType())) {
+            bookQueryWrapper.like("type", book.getType());
         }
-        if (book.getIsBorrow()!=null){
-            if (book.getIsBorrow()==1){
+        if (book.getIsBorrow() != null) {
+            if (book.getIsBorrow() == 1) {
                 //借出
-                bookQueryWrapper.eq("is_borrow",1);
-            }else {
+                bookQueryWrapper.eq("is_borrow", 1);
+            } else {
                 //未借出
-                bookQueryWrapper.eq("is_borrow",0);
+                bookQueryWrapper.eq("is_borrow", 0);
             }
         }
         bookQueryWrapper.orderByDesc("borrow_times");
-        bookService.page(mybatisPage,bookQueryWrapper);
-        Page<Book> page = new Page<>(pageSize,mybatisPage);
+        bookService.page(mybatisPage, bookQueryWrapper);
+        Page<Book> page = new Page<>(pageSize, mybatisPage);
         return page;
     }
 
     @RequestMapping("/search")
     @ResponseBody
-    public List<Book> search(String query){
+    public List<Book> search(String query) {
 
         QueryWrapper<Book> queryWrapper = new QueryWrapper<>();
-        queryWrapper.like("book_name",query).or().like("author",query).or().like("type",query);
+        queryWrapper.like("book_name", query).or().like("author", query).or().like("type", query);
         List<Book> list = bookService.list(queryWrapper);
         return list;
     }
 
     /* 正在预约中的图书数量 */
-    private int bookBorrowCheckCount(int bookId){
+    private int bookBorrowCheckCount(int bookId) {
         List<BorrowInfo> borrowInfos = borrowInfoService.list(new QueryWrapper<BorrowInfo>().eq("bid", bookId).eq("is_return", -1).apply("datediff(now(), borrow_time) <= " + BorrowInfo.BORROW_CHECK_TIME));
-        if (borrowInfos != null){
+        if (borrowInfos != null) {
             return borrowInfos.size();
         }
         return 0;
     }
 
     /* 已经被借出的图书数量 */
-    private int bookBorrowedCount(int bookId){
+    private int bookBorrowedCount(int bookId) {
         List<BorrowInfo> borrowInfos = borrowInfoService.list(new QueryWrapper<BorrowInfo>().eq("bid", bookId).eq("is_return", 0));
-        if (borrowInfos != null){
+        if (borrowInfos != null) {
             return borrowInfos.size();
         }
         return 0;
     }
 
-    public int isBorrowAble(int userId, int bookId){
+    public int isBorrowAble(int userId, int bookId) {
         // 查看用户是否已经借到了这本书
         List<BorrowInfo> borrowInfos = borrowInfoService.list(new QueryWrapper<BorrowInfo>().eq("uid", userId).eq("bid", bookId).eq("is_return", 0));
-        if (borrowInfos != null && borrowInfos.size() > 0){
+        if (borrowInfos != null && borrowInfos.size() > 0) {
             return -1;
         }
         // 查看用户是否已经预约了这本书
-        borrowInfos = borrowInfoService.list(new QueryWrapper<BorrowInfo>().eq("uid", userId).eq("bid", bookId).apply("datediff(now(), borrow_time) <= " + BorrowInfo.BORROW_CHECK_TIME));
-        if (borrowInfos != null && borrowInfos.size() > 0){
+        borrowInfos = borrowInfoService.list(new QueryWrapper<BorrowInfo>().eq("uid", userId).eq("bid", bookId).eq("is_return", -1).apply("datediff(now(), borrow_time) <= " + BorrowInfo.BORROW_CHECK_TIME));
+        if (borrowInfos != null && borrowInfos.size() > 0) {
             return -2;
         }
         int bookCount = bookService.getOne(new QueryWrapper<Book>().eq("id", bookId)).getBookCount();
         int borrowCheckCount = bookBorrowCheckCount(bookId);
         int borrowOutCount = bookBorrowedCount(bookId);
-        if (bookCount <= borrowCheckCount + borrowOutCount){
+        if (bookCount <= borrowCheckCount + borrowOutCount) {
             return -3;
         }
         return 0;
@@ -118,15 +117,15 @@ public class FrontBookController {
 
 
     @GetMapping("/info")
-    public String info(int id, Model model, HttpSession session){
+    public String info(int id, Model model, HttpSession session) {
         User user = (User) session.getAttribute("user");
 
         Book book = bookService.getById(id);
         StackRoom stackRoom = stackRoomService.getById(book.getSrid());
         BorrowInfo borrowInfo = borrowInfoService.getOne(new QueryWrapper<BorrowInfo>().eq("bid", id).eq("is_return", 0));
 
-        model.addAttribute("bookInfo",book);
-        model.addAttribute("stackRoom",stackRoom);
+        model.addAttribute("bookInfo", book);
+        model.addAttribute("stackRoom", stackRoom);
         model.addAttribute("borrowInfo", borrowInfo);
 
         /* 查看当前用户是否可以借阅这本书 */
@@ -139,7 +138,7 @@ public class FrontBookController {
     @PostMapping("/order")
     @ResponseBody
     @Transactional
-    public String order(int uid,int bid){
+    public String order(int uid, int bid) {
         //查询预约借了几本书  如果预约了5本就不用动
         /*
         int count = borrowInfoService.count(new QueryWrapper<BorrowInfo>().eq("is_return", 0));
@@ -148,7 +147,7 @@ public class FrontBookController {
         }
         */
         int code = isBorrowAble(uid, bid);
-        if (code != 0){
+        if (code != 0) {
             return "wrong";
         }
 
@@ -159,7 +158,7 @@ public class FrontBookController {
         borrowInfo.setUid(uid);
         Calendar instance = Calendar.getInstance();
         //归还时间
-        instance.add(Calendar.DATE,14);
+        instance.add(Calendar.DATE, 14);
         borrowInfo.setReturnTime(instance.getTime());
         //初始为-1表示, 用户已经预约，正在等待管理员审核
         borrowInfo.setIsReturn(-1);

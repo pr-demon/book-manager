@@ -1,5 +1,5 @@
 //Flot Bar Chart
-$(function() {
+$(function () {
     var barOptions = {
         series: {
             bars: {
@@ -24,7 +24,7 @@ $(function() {
             hoverable: true,
             clickable: true,
             tickColor: "#D4D4D4",
-            borderWidth:0
+            borderWidth: 0
         },
         legend: {
             show: false
@@ -49,7 +49,7 @@ $(function() {
 
 });
 
-$(function() {
+$(function () {
     var barOptions = {
         series: {
             lines: {
@@ -74,7 +74,7 @@ $(function() {
             hoverable: true,
             clickable: true,
             tickColor: "#D4D4D4",
-            borderWidth:0
+            borderWidth: 0
         },
         legend: {
             show: false
@@ -99,7 +99,7 @@ $(function() {
 
 });
 //Flot Pie Chart
-$(function() {
+$(function () {
 
     var data = [{
         label: "数据 1",
@@ -141,7 +141,7 @@ $(function() {
 
 });
 
-$(function() {
+$(function () {
 
     var container = $("#flot-line-chart-moving");
 
@@ -192,7 +192,7 @@ $(function() {
 
             color: "#999999",
             tickColor: "#D4D4D4",
-            borderWidth:0,
+            borderWidth: 0,
             minBorderMargin: 20,
             labelMargin: 10,
             backgroundColor: {
@@ -203,7 +203,7 @@ $(function() {
                 bottom: 20,
                 left: 20
             },
-            markings: function(axes) {
+            markings: function (axes) {
                 var markings = [];
                 var xaxis = axes.xaxis;
                 for (var x = Math.floor(xaxis.min); x < xaxis.max; x += xaxis.tickSize * 2) {
@@ -220,7 +220,7 @@ $(function() {
         },
         colors: ["#1ab394"],
         xaxis: {
-            tickFormatter: function() {
+            tickFormatter: function () {
                 return "";
             }
         },
@@ -244,7 +244,7 @@ $(function() {
 });
 
 //Flot Multiple Axes Line Chart
-$(function() {
+$(function () {
     var oilprices = [
         [1167692400000, 61.05],
         [1167778800000, 58.32],
@@ -1205,7 +1205,7 @@ $(function() {
     ];
 
     function euroFormatter(v, axis) {
-        return "&yen;"+v.toFixed(axis.tickDecimals);
+        return "&yen;" + v.toFixed(axis.tickDecimals);
     }
 
     function doPlot(position) {
@@ -1237,7 +1237,7 @@ $(function() {
                 hoverable: true,
                 clickable: true,
                 tickColor: "#D4D4D4",
-                borderWidth:0,
+                borderWidth: 0,
                 hoverable: true //IMPORTANT! this is needed for tooltip to work,
 
             },
@@ -1246,7 +1246,7 @@ $(function() {
                 content: "%s %x 为 %y",
                 xDateFormat: "%y-%0m-%0d",
 
-                onHover: function(flotItem, $tooltipEl) {
+                onHover: function (flotItem, $tooltipEl) {
                     // console.log(flotItem, $tooltipEl);
                 }
             }
@@ -1256,7 +1256,7 @@ $(function() {
 
     doPlot("right");
 
-    $("button").click(function() {
+    $("button").click(function () {
         doPlot($(this).text());
     });
 });

@@ -4,31 +4,32 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 
     <title>图书馆</title>
 
-    <link rel="shortcut icon" href="favicon.ico">
-    <link th:href="@{/css/bootstrap.min.css?v=3.3.6}" rel="stylesheet">
-    <link th:href="@{/css/font-awesome.css?v=4.4.0}" rel="stylesheet">
-    <link th:href="@{/css/animate.css}" rel="stylesheet">
-    <link th:href="@{/css/style.css?v=4.1.0}" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css?v=3.3.6}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.css?v=4.4.0}">
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css?v=4.1.0}">
 
 </head>
 
 <body class="gray-bg top-navigation">
 
 <div id="wrapper">
-    <div id="page-wrapper" class="gray-bg">
+    <div class="gray-bg" id="page-wrapper">
         <!--头部-->
-        <div th:replace="_fragments :: head" class="row border-bottom white-bg">
+        <div class="row border-bottom white-bg" th:replace="_fragments :: head">
             <nav class="navbar navbar-static-top" role="navigation">
                 <div class="navbar-header">
-                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                    <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar"
+                            data-toggle="collapse" type="button">
                         <i class="fa fa-reorder"></i>
                     </button>
-                    <a href="#" class="navbar-brand">欢迎来到图书馆</a>
+                    <a class="navbar-brand" href="#">欢迎来到图书馆</a>
                 </div>
                 <div class="navbar-collapse collapse" id="navbar">
                     <ul class="nav navbar-nav">
@@ -36,8 +37,9 @@
                             <a aria-expanded="false" role="button" th:href="@{/index}"> 返回首页</a>
                         </li>
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
-                            <ul role="menu" class="dropdown-menu">
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"
+                               role="button"> 菜单 <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
                                 <li><a href="">菜单列表</a>
                                 </li>
                                 <li><a href="">菜单列表</a>
@@ -49,8 +51,9 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
-                            <ul role="menu" class="dropdown-menu">
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"
+                               role="button"> 菜单 <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
                                 <li><a href="">菜单列表</a>
                                 </li>
                                 <li><a href="">菜单列表</a>
@@ -62,8 +65,9 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
-                            <ul role="menu" class="dropdown-menu">
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"
+                               role="button"> 菜单 <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
                                 <li><a href="">菜单列表</a>
                                 </li>
                                 <li><a href="">菜单列表</a>
@@ -75,8 +79,9 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
-                            <ul role="menu" class="dropdown-menu">
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"
+                               role="button"> 菜单 <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
                                 <li><a href="">菜单列表</a>
                                 </li>
                                 <li><a href="">菜单列表</a>
@@ -91,8 +96,11 @@
                     </ul>
                     <ul class="nav navbar-top-links navbar-right">
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> <span th:text="${session.user!=null?session.user.username:'未登录'}"></span> <span class="caret"></span></a>
-                            <ul role="menu" class="dropdown-menu">
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"
+                               role="button"> <span
+                                    th:text="${session.user!=null?session.user.username:'未登录'}"></span> <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
                                 <li><a th:href="@{/logout}"><i class="fa fa-sign-out"></i> 退出</a>
                                 </li>
                             </ul>
@@ -116,14 +124,16 @@
                                     <div class="col-md-2"></div>
                                     <div class="col-md-8">
                                         <div class="input-group">
-                                            <input type="text" placeholder="请输入想要查询的书名/类型/作者..." class="form-control" id="search">
+                                            <input class="form-control" id="search" placeholder="请输入想要查询的书名/类型/作者..."
+                                                   type="text">
                                             <div class="input-group-btn">
-                                                <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                                                <button class="btn btn-white dropdown-toggle" data-toggle="dropdown"
+                                                        type="button">
                                                     <span class="caret"></span>
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-right" role="menu">
                                                 </ul>
-                                                <button id="search-btn" class="btn btn-info">搜索</button>
+                                                <button class="btn btn-info" id="search-btn">搜索</button>
                                             </div>
 
                                         </div>
@@ -134,22 +144,23 @@
                         </div>
                     </div>
                 </div>
-                <div id="showBook" class="row">
-<!--                    显示图书数据-->
+                <div class="row" id="showBook">
+                    <!--                    显示图书数据-->
                 </div>
 
                 <div class="row">
                     <div class="col-md-3 pull-right">
                         <div class="btn-group">
-                            <button type="button" id="prePage" class="btn btn-white"><i class="fa fa-chevron-left"></i>
+                            <button class="btn btn-white" id="prePage" type="button"><i class="fa fa-chevron-left"></i>
                             </button>
-                            <div id="pageBtnGroup" class="inline">
-<!--                                <button class="btn btn-white">1</button>-->
-<!--                                <button class="btn btn-white  active">2</button>-->
-<!--                                <button class="btn btn-white">3</button>-->
-<!--                                <button class="btn btn-white">4</button>-->
+                            <div class="inline" id="pageBtnGroup">
+                                <!--                                <button class="btn btn-white">1</button>-->
+                                <!--                                <button class="btn btn-white  active">2</button>-->
+                                <!--                                <button class="btn btn-white">3</button>-->
+                                <!--                                <button class="btn btn-white">4</button>-->
                             </div>
-                            <button type="button" id="nextPage" class="btn btn-white pull-right"><i class="fa fa-chevron-right"></i>
+                            <button class="btn btn-white pull-right" id="nextPage" type="button"><i
+                                    class="fa fa-chevron-right"></i>
                             </button>
                         </div>
                     </div>
@@ -161,9 +172,9 @@
 
         <!--脚部-->
         <div class="footer">
-<!--            <div class="pull-right">-->
-<!--                By：<a href="http://www.baidu.com" target="_blank">百度一下，你就知道</a>-->
-<!--            </div>-->
+            <!--            <div class="pull-right">-->
+            <!--                By：<a href="http://www.baidu.com" target="_blank">百度一下，你就知道</a>-->
+            <!--            </div>-->
             <div>
                 <strong>Copyright</strong>
             </div>
@@ -193,7 +204,7 @@
 
 <script>
     $(function () {
-        queryList(1,8);
+        queryList(1, 8);
     });
 
     let pageNum;
@@ -206,17 +217,17 @@
     let pageCount;
     let bookName;
 
-    function queryList(num,size){
+    function queryList(num, size) {
         $.ajax({
-            url:"/book/list",
-            type:"post",
-            data:{
-                pageNum:num,
-                pageSize:size,
-                bookName:bookName,
+            url: "/book/list",
+            type: "post",
+            data: {
+                pageNum: num,
+                pageSize: size,
+                bookName: bookName,
             },
-            dataType:"json",
-            success:function (msg) {
+            dataType: "json",
+            success: function (msg) {
                 pageNum = msg.pageNum;
                 pageSize = msg.pageSize;
                 next = msg.next;
@@ -229,23 +240,23 @@
 
                 let res = "";
                 let data = msg.rows;
-                for (let book of data){
+                for (let book of data) {
                     let id = book.id;
                     console.log(id);
                     let isBorrow = "";
-                    if (book.isBorrow==2){
+                    if (book.isBorrow == 2) {
                         isBorrow = "已借出";
-                    }else if (book.isBorrow==1){
+                    } else if (book.isBorrow == 1) {
                         isBorrow = "已预约"
-                    }else {
+                    } else {
                         isBorrow = "在库"
                     }
-                    let labelShow = book.isBorrow==2?"label-danger":"label-info";
-                    if (book.isBorrow==2){
+                    let labelShow = book.isBorrow == 2 ? "label-danger" : "label-info";
+                    if (book.isBorrow == 2) {
                         labelShow = "label-danger";
-                    }else if (book.isBorrow==1){
+                    } else if (book.isBorrow == 1) {
                         labelShow = "label-success";
-                    }else {
+                    } else {
                         labelShow = "label-info";
                     }
                     let image = book.picture;
@@ -253,19 +264,19 @@
                     let author = book.author;
                     let borrowTimes = book.borrowTimes;
                     let type = book.type;
-                    res+='<a href="/book/info?id='+id+'">\n' +
+                    res += '<a href="/book/info?id=' + id + '">\n' +
                         '                        <div class="col-md-3">\n' +
                         '                            <div class="ibox float-e-margins">\n' +
                         '                                <div class="ibox-title">\n' +
-                        '                                    <span class="label '+labelShow+' pull-right">'+isBorrow+'</span>\n' +
-                        '                                    <h5>'+bookName+'</h5>\n' +
+                        '                                    <span class="label ' + labelShow + ' pull-right">' + isBorrow + '</span>\n' +
+                        '                                    <h5>' + bookName + '</h5>\n' +
                         '                                </div>\n' +
                         '                                <div class="ibox-content text-center">\n' +
-                        '                                    <img width="200px" height="160px" class="img-responsive" src="'+image+'">\n' +
+                        '                                    <img width="200px" height="160px" class="img-responsive" src="' + image + '">\n' +
                         '                                    <div class="hr-line-dashed" style="margin: 10px 0"></div>\n' +
-                        '<span class="badge badge-success pull-left">类型:'+type+'</span>'+
-                        '                                    <strong>'+author+'</strong>\n' +
-                        '<span class="badge badge-primary pull-right">借阅量:'+borrowTimes+'</span>'+
+                        '<span class="badge badge-success pull-left">类型:' + type + '</span>' +
+                        '                                    <strong>' + author + '</strong>\n' +
+                        '<span class="badge badge-primary pull-right">借阅量:' + borrowTimes + '</span>' +
                         '                                </div>\n' +
                         '                            </div>\n' +
                         '                        </div>\n' +
@@ -273,20 +284,20 @@
 
                 }
                 $("#showBook").html(res);
-                $("#prePage").attr('disabled',false);
-                $("#nextPage").attr('disabled',false);
-                if (first){
-                    $("#prePage").attr('disabled',true);
+                $("#prePage").attr('disabled', false);
+                $("#nextPage").attr('disabled', false);
+                if (first) {
+                    $("#prePage").attr('disabled', true);
                 }
-                if (last){
-                    $("#nextPage").attr('disabled',true);
+                if (last) {
+                    $("#nextPage").attr('disabled', true);
                 }
                 let pageBtnGroup = "";
-                for (let i = 1;i<pageCount+1;i++){
-                    if (i==pageNum){
-                        pageBtnGroup += '<button class="btn btn-white  active">'+i+'</button>';
-                    }else {
-                        pageBtnGroup += '<button onclick="changePage('+i+')" class="btn btn-white">'+i+'</button>';
+                for (let i = 1; i < pageCount + 1; i++) {
+                    if (i == pageNum) {
+                        pageBtnGroup += '<button class="btn btn-white  active">' + i + '</button>';
+                    } else {
+                        pageBtnGroup += '<button onclick="changePage(' + i + ')" class="btn btn-white">' + i + '</button>';
                     }
                 }
                 $("#pageBtnGroup").html(pageBtnGroup);
@@ -297,19 +308,19 @@
     $("#search-btn").click(function () {
         console.log("click");
         bookName = $("#search").val();
-        queryList(1,8);
+        queryList(1, 8);
         bookName = "";
     });
 
     $("#prePage").click(function () {
-        queryList(pageNum-1,pageSize);
+        queryList(pageNum - 1, pageSize);
     });
     $("#nextPage").click(function () {
-        queryList(pageNum+1,pageSize);
+        queryList(pageNum + 1, pageSize);
     });
 
-    function changePage(i){
-        queryList(i,pageSize);
+    function changePage(i) {
+        queryList(i, pageSize);
     }
 
     //加载搜索框
@@ -323,9 +334,9 @@
         getDataMethod: "url", //获取数据的方式，总是从 URL 获取
         //showHeader: true,
         url: "/book/search?query=", /*优先从url ajax 请求 json 帮助数据，注意最后一个参数为关键字请求参数*/
-        processData: function(json){// url 获取数据时，对数据的处理，作为 getData 的回调函数
+        processData: function (json) {// url 获取数据时，对数据的处理，作为 getData 的回调函数
             var i, len, data = {value: []};
-            if(!json || json.length == 0) {
+            if (!json || json.length == 0) {
                 return false;
             }
             len = json.length;
@@ -341,18 +352,18 @@
     }).on('onDataRequestSuccess', function (e, result) {
         console.log('onDataRequestSuccess: ', result);
     }).on('onSetSelectValue', function (e, keyword) {
-        console.log("---->"+keyword);
+        console.log("---->" + keyword);
         bookName = keyword.key;
-        queryList(1,8);
+        queryList(1, 8);
         bookName = "";
         console.log('onSetSelectValue: ', keyword);
     }).on('onUnsetSelectValue', function (e) {
-        console.log("onUnsetSelectValue",e);
+        console.log("onUnsetSelectValue", e);
     });
 
 </script>
 
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<script charset="UTF-8" src="http://tajs.qq.com/stats?sId=9051096" type="text/javascript"></script>
 <!--统计代码，可删除-->
 
 </body>

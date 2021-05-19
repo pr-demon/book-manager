@@ -1,6 +1,5 @@
 package com.qlu.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.qlu.bean.User;
 import com.qlu.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,37 +20,37 @@ public class FrontUserController {
     private IUserService userService;
 
     @GetMapping("/editUserInfo")
-    public String to_editUserInfo(HttpSession session, Model model){
+    public String to_editUserInfo(HttpSession session, Model model) {
         User user = (User) session.getAttribute("user");
-        model.addAttribute("user",user);
+        model.addAttribute("user", user);
         return "/user/editUserInfo";
     }
+
     @GetMapping("/editPassword")
-    public String to_editPassword(){
+    public String to_editPassword() {
         return "/user/editPassword";
     }
 
     @GetMapping("/info")
-    public String info(){
+    public String info() {
         return "/user/info";
     }
 
 
-
     @PostMapping("/editUserInfo")
-    public String editUserInfo(User user,HttpSession session){
+    public String editUserInfo(User user, HttpSession session) {
         boolean b = userService.updateById(user);
-        if (b){
-            session.setAttribute("user",user);
+        if (b) {
+            session.setAttribute("user", user);
         }
         return "redirect:/user/info";
     }
 
     @PostMapping("/editPassword")
     @ResponseBody
-    public String editPassword(String oldPassword,String password,Integer uid){
+    public String editPassword(String oldPassword, String password, Integer uid) {
         User test = userService.getById(uid);
-        if (!test.getPassword().equals(oldPassword)){
+        if (!test.getPassword().equals(oldPassword)) {
             return "fail";
         }
         User user = new User();
@@ -60,7 +59,6 @@ public class FrontUserController {
         userService.updateById(user);
         return "success";
     }
-
 
 
 }

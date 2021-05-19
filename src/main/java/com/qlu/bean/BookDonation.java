@@ -40,7 +40,7 @@ public class BookDonation {
     /**
      * 出版日期
      */
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date publishDate;
 
     /**

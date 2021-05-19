@@ -4,31 +4,32 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 
     <title>图书馆</title>
 
-    <link rel="shortcut icon" href="favicon.ico">
-    <link th:href="@{/css/bootstrap.min.css?v=3.3.6}" rel="stylesheet">
-    <link th:href="@{/css/font-awesome.css?v=4.4.0}" rel="stylesheet">
-    <link th:href="@{/css/animate.css}" rel="stylesheet">
-    <link th:href="@{/css/style.css?v=4.1.0}" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css?v=3.3.6}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.css?v=4.4.0}">
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css?v=4.1.0}">
 
 </head>
 
 <body class="gray-bg top-navigation">
 
 <div id="wrapper">
-    <div  id="page-wrapper" class="gray-bg">
+    <div class="gray-bg" id="page-wrapper">
         <!--头部-->
-        <div th:fragment="head" class="row border-bottom white-bg">
+        <div class="row border-bottom white-bg" th:fragment="head">
             <nav class="navbar navbar-static-top" role="navigation">
                 <div class="navbar-header">
-                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                    <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar"
+                            data-toggle="collapse" type="button">
                         <i class="fa fa-reorder"></i>
                     </button>
-                    <a href="#" class="navbar-brand">欢迎来到图书馆</a>
+                    <a class="navbar-brand" href="#">欢迎来到图书馆</a>
                 </div>
                 <div class="navbar-collapse collapse" id="navbar">
                     <ul class="nav navbar-nav">
@@ -36,8 +37,9 @@
                             <a aria-expanded="false" role="button" th:href="@{/index}"> 返回首页</a>
                         </li>
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 捐书 <span class="caret"></span></a>
-                            <ul role="menu" class="dropdown-menu">
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"
+                               role="button"> 捐书 <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
                                 <li><a th:href="@{/bookDonation/add}">我要捐书</a>
                                 </li>
                                 <li><a th:href="@{/bookDonation/list}">我的捐赠</a>
@@ -45,8 +47,9 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 借阅信息 <span class="caret"></span></a>
-                            <ul role="menu" class="dropdown-menu">
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"
+                               role="button"> 借阅信息 <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
                                 <li><a th:href="@{/borrow/borrowList}">我的预约/借阅</a>
                                 </li>
                                 <li><a th:href="@{/borrow/historyList}">我的借阅历史</a>
@@ -54,8 +57,9 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 个人信息 <span class="caret"></span></a>
-                            <ul role="menu" class="dropdown-menu">
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"
+                               role="button"> 个人信息 <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
                                 </li>
                                 <li><a th:href="@{/user/editUserInfo}">修改个人信息</a>
                                 </li>
@@ -67,8 +71,11 @@
                     </ul>
                     <ul class="nav navbar-top-links navbar-right">
                         <li class="dropdown">
-                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> <span th:text="${session.user!=null?session.user.username:'未登录'}"></span> <span class="caret"></span></a>
-                            <ul role="menu" class="dropdown-menu">
+                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#"
+                               role="button"> <span
+                                    th:text="${session.user!=null?session.user.username:'未登录'}"></span> <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
                                 <li><a th:href="@{/logout}"><i class="fa fa-sign-out"></i> 退出</a>
                                 </li>
                             </ul>
@@ -85,9 +92,9 @@
 
         <!--脚部-->
         <div class="footer">
-<!--            <div class="pull-right">-->
-<!--                By：<a href="http://www.baidu.com" target="_blank">百度一下，你就知道</a>-->
-<!--            </div>-->
+            <!--            <div class="pull-right">-->
+            <!--                By：<a href="http://www.baidu.com" target="_blank">百度一下，你就知道</a>-->
+            <!--            </div>-->
             <div>
                 <strong>Copyright</strong>
             </div>

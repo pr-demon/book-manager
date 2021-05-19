@@ -4,25 +4,25 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 
     <title>图书馆</title>
 
-    <link rel="shortcut icon" href="favicon.ico">
-    <link th:href="@{/css/bootstrap.min.css?v=3.3.6}" rel="stylesheet">
-    <link th:href="@{/css/font-awesome.css?v=4.4.0}" rel="stylesheet">
-    <link th:href="@{/css/animate.css}" rel="stylesheet">
-    <link th:href="@{/css/style.css?v=4.1.0}" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css?v=3.3.6}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.css?v=4.4.0}">
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css?v=4.1.0}">
 
 </head>
 
 <body class="gray-bg top-navigation">
 
 <div id="wrapper">
-    <div id="page-wrapper" class="gray-bg">
+    <div class="gray-bg" id="page-wrapper">
         <!--头部-->
-        <div th:replace="_fragments :: head" class="row border-bottom white-bg">
+        <div class="row border-bottom white-bg" th:replace="_fragments :: head">
         </div>
 
         <!--内容开始-->
@@ -44,8 +44,8 @@
                         <div class="ibox-content">
 
                             <div class="row">
-                                <input type="hidden" id="uid" th:value="${session.user.id}">
-                                <table id="historyListTable" class="table table-bordered table-hover">
+                                <input id="uid" th:value="${session.user.id}" type="hidden">
+                                <table class="table table-bordered table-hover" id="historyListTable">
                                 </table>
                             </div>
 
@@ -59,9 +59,9 @@
 
         <!--脚部-->
         <div class="footer">
-<!--            <div class="pull-right">-->
-<!--                By：<a href="http://www.baidu.com" target="_blank">百度一下，你就知道</a>-->
-<!--            </div>-->
+            <!--            <div class="pull-right">-->
+            <!--                By：<a href="http://www.baidu.com" target="_blank">百度一下，你就知道</a>-->
+            <!--            </div>-->
             <div>
                 <strong>Copyright</strong>
             </div>
@@ -89,8 +89,8 @@
 <!--bootStrap的搜索包-->
 <script th:src="@{/js/plugins/suggest/bootstrap-suggest.min.js}"></script>
 
-<script th:src="@{/js/plugins/bootstrap-table/bootstrap-table.min.js}" ></script>
-<script th:src="@{/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}" ></script>
+<script th:src="@{/js/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+<script th:src="@{/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
 
 
 <script>
@@ -107,7 +107,7 @@
 
     function queryList() {
         historyListTable = $("#historyListTable").bootstrapTable({
-            url:'/borrow/showHistoryList',
+            url: '/borrow/showHistoryList',
             sidePagination: 'server',
             pagination: true,
             pageNumber: 1,
@@ -116,34 +116,38 @@
             queryParamsType: "undefined",
             paginationPreText: '上一页',
             paginationNextText: '下一页',
-            queryParams: function(params) {
+            queryParams: function (params) {
                 let uid = $("#uid").val();
                 let newParam = {
                     pageNum: params.pageNumber,
                     pageSize: params.pageSize,
-                    uid:uid
+                    uid: uid
                 }
                 return newParam;
             },
             columns: [
-                { field: 'SerialNumber', title: '序号',
+                {
+                    field: 'SerialNumber', title: '序号',
                     formatter: function (value, row, index) {
-                        return index+1;
+                        return index + 1;
                     }
                 },
-                { field: "bookName", title: "书籍名" },
-                { field: "author", title: "作者" },
-                { field:"borrowTime", title: "初始借阅时间",
-                    formatter:function (value,row,index) {
-                        return value.substr(0,10);
+                {field: "bookName", title: "书籍名"},
+                {field: "author", title: "作者"},
+                {
+                    field: "borrowTime", title: "初始借阅时间",
+                    formatter: function (value, row, index) {
+                        return value.substr(0, 10);
                     }
                 },
-                { field:"returnTime", title: "归还时间",
-                    formatter:function (value,row,index) {
-                        return value.substr(0,10);
+                {
+                    field: "returnTime", title: "归还时间",
+                    formatter: function (value, row, index) {
+                        return value.substr(0, 10);
                     }
                 },
-                { title: "操作",
+                {
+                    title: "操作",
                     formatter: function (value, row, index) {
                         let info = "<button type='button' class='btn btn-primary' id='info' >书籍详情</button>";
                         return info;
@@ -152,16 +156,17 @@
                 }]
         });
     }
+
     window.userEvents = {
-        'click #info': function(event, value, row, index) {
+        'click #info': function (event, value, row, index) {
             let bid = row.bid;
             let action = '/book/info?id=' + bid;
-            window.location.href=action;
+            window.location.href = action;
         }
     }
 </script>
 
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<script charset="UTF-8" src="http://tajs.qq.com/stats?sId=9051096" type="text/javascript"></script>
 <!--统计代码，可删除-->
 
 </body>

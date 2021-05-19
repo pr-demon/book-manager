@@ -4,19 +4,19 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 
     <title>H+ 后台主题UI框架 - 基础表格</title>
-    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
-    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+    <meta content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台" name="keywords">
+    <meta content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术" name="description">
 
     <link rel="shortcut icon" th:href="@{favicon.ico}">
-    <link th:href="@{/css/bootstrap.min.css?v=3.3.6}" rel="stylesheet">
-    <link th:href="@{/css/font-awesome.css?v=4.4.0}" rel="stylesheet">
-    <link th:href="@{/css/plugins/iCheck/custom.css}" rel="stylesheet">
-    <link th:href="@{/css/animate.css}" rel="stylesheet">
-    <link th:href="@{/css/style.css?v=4.1.0}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css?v=3.3.6}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.css?v=4.4.0}">
+    <link rel="stylesheet" th:href="@{/css/plugins/iCheck/custom.css}">
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css?v=4.1.0}">
 
 </head>
 
@@ -47,24 +47,28 @@
                     <div class="row">
                         <div class="col-sm-3 m-b-xs">
                             <div class="input-group">
-                                <input type="text" id="bookName" name="bookName" placeholder="书名" class="input-sm form-control">
+                                <input class="input-sm form-control" id="bookName" name="bookName" placeholder="书名"
+                                       type="text">
                             </div>
                         </div>
                         <div class="col-sm-4 m-b-xs">
                             <div class="input-group">
-                                <input type="text" id="author" name="author" placeholder="作者" class="input-sm form-control">
+                                <input class="input-sm form-control" id="author" name="author" placeholder="作者"
+                                       type="text">
                             </div>
                         </div>
                         <div class="col-sm-5">
                             <div class="input-group">
-                                <input type="text" id="type" name="type" placeholder="类型" class="input-sm form-control"> <span class="input-group-btn">
-                                        <button type="button" id="search-btn" class="btn btn-sm btn-primary"> 搜索</button> </span>
+                                <input class="input-sm form-control" id="type" name="type" placeholder="类型" type="text">
+                                <span class="input-group-btn">
+                                        <button class="btn btn-sm btn-primary" id="search-btn"
+                                                type="button"> 搜索</button> </span>
                             </div>
                         </div>
                     </div>
                     <div>
 
-                        <div th:fragment="bookList" id="table-container" class="table-responsive">
+                        <div class="table-responsive" id="table-container" th:fragment="bookList">
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
@@ -86,10 +90,11 @@
                                     <td th:text="${#dates.format(book.publishDate,'yyyy-MM-dd')}"></td>
                                     <td th:text="${book.type}"></td>
                                     <td th:text="${book.borrowTimes}"></td>
-                                    <td><img width="30px" th:src="${book.picture}"></td>
+                                    <td><img th:src="${book.picture}" width="30px"></td>
                                     <td>
                                         <div class="btn-group">
-                                            <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">操作 <span class="caret"></span>
+                                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">操作
+                                                <span class="caret"></span>
                                             </button>
                                             <ul class="dropdown-menu">
                                                 <li><a th:href="@{/admin/book/editPicture/{id}(id=${book.id})}">修改封面</a>
@@ -111,9 +116,13 @@
                                     <span th:text="|共${page.total}条数据,共${page.total/page.size+1}页,当前是第${page.current}页|"></span>
                                 </div>
                                 <div class="btn-group col-lg-5 pull-right inline">
-                                    <a th:href="@{/admin/book/list?pageNumber={pageNumber}(pageNumber=${page.current-1})}" th:disabled="${page.current}==1" class="btn btn-white"><i class="fa fa-chevron-left"></i>
+                                    <a class="btn btn-white"
+                                       th:disabled="${page.current}==1" th:href="@{/admin/book/list?pageNumber={pageNumber}(pageNumber=${page.current-1})}"><i
+                                            class="fa fa-chevron-left"></i>
                                     </a>
-                                    <a th:href="@{/admin/book/list?pageNumber={pageNumber}(pageNumber=${page.current+1})}" th:disabled="${page.current}==${page.total/page.size+1}" class="btn btn-white"><i class="fa fa-chevron-right"></i>
+                                    <a class="btn btn-white"
+                                       th:disabled="${page.current}==${page.total/page.size+1}" th:href="@{/admin/book/list?pageNumber={pageNumber}(pageNumber=${page.current+1})}"><i
+                                            class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                             </div>
@@ -130,7 +139,6 @@
 <!-- 全局js -->
 <script th:src="@{/js/jquery.min.js?v=2.1.4}"></script>
 <script th:src="@{/js/bootstrap.min.js?v=3.3.6}"></script>
-
 
 
 <!-- Peity -->
@@ -161,16 +169,16 @@
     });
 
     function loadData() {
-        $("#table-container").load(/*[[@{/admin/book/search}]]*/"/admin/book/search",{
-            bookName : $("#bookName").val(),
-            author : $("#author").val(),
-            type : $("#type").val()
+        $("#table-container").load(/*[[@{/admin/book/search}]]*/"/admin/book/search", {
+            bookName: $("#bookName").val(),
+            author: $("#author").val(),
+            type: $("#type").val()
         });
     }
 
 </script>
 
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<script charset="UTF-8" src="http://tajs.qq.com/stats?sId=9051096" type="text/javascript"></script>
 <!--统计代码，可删除-->
 
 </body>

@@ -1,7 +1,6 @@
 package com.qlu.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.qlu.bean.Book;
 import com.qlu.bean.User;
 
 

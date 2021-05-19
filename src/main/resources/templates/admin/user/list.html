@@ -4,19 +4,19 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 
     <title>用户列表</title>
-    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
-    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+    <meta content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台" name="keywords">
+    <meta content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术" name="description">
 
     <link rel="shortcut icon" th:href="@{favicon.ico}">
-    <link th:href="@{/css/bootstrap.min.css?v=3.3.6}" rel="stylesheet">
-    <link th:href="@{/css/font-awesome.css?v=4.4.0}" rel="stylesheet">
-    <link th:href="@{/css/plugins/iCheck/custom.css}" rel="stylesheet">
-    <link th:href="@{/css/animate.css}" rel="stylesheet">
-    <link th:href="@{/css/style.css?v=4.1.0}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css?v=3.3.6}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.css?v=4.4.0}">
+    <link rel="stylesheet" th:href="@{/css/plugins/iCheck/custom.css}">
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css?v=4.1.0}">
     <link rel="stylesheet" th:href="@{/css/plugins/bootstrap-table/bootstrap-table.min.css}">
 </head>
 
@@ -47,20 +47,20 @@
                     <div class="row">
                         <div class="col-sm-5">
                             <div class="input-group">
-                                <select name="level" id="level" class="form-control">
+                                <select class="form-control" id="level" name="level">
                                     <option value="">==请选择用户类型==</option>
                                     <option value="0">普通用户</option>
                                     <option value="1">管理员</option>
                                 </select>
                                 <span class="input-group-btn">
-                                    <button id="search-btn" type="button" class="btn btn-primary"> 搜索</button>
+                                    <button class="btn btn-primary" id="search-btn" type="button"> 搜索</button>
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <!--bootstraptable加载位置-->
-                        <table id="userTable" class="table table-bordered table-hover"></table>
+                        <table class="table table-bordered table-hover" id="userTable"></table>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,6 @@
 <!-- 全局js -->
 <script th:src="@{/js/jquery.min.js?v=2.1.4}"></script>
 <script th:src="@{/js/bootstrap.min.js?v=3.3.6}"></script>
-
 
 
 <!-- Peity -->
@@ -88,8 +87,8 @@
 <!-- Peity -->
 <script th:src="@{/js/demo/peity-demo.js}"></script>
 
-<script th:src="@{/js/plugins/bootstrap-table/bootstrap-table.min.js}" ></script>
-<script th:src="@{/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}" ></script>
+<script th:src="@{/js/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+<script th:src="@{/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
 <script th:inline="javascript">
     $(document).ready(function () {
         $('.i-checks').iCheck({
@@ -121,12 +120,12 @@
             queryParamsType: "undefined",
             paginationPreText: '上一页',
             paginationNextText: '下一页',
-            queryParams: function(params) {
+            queryParams: function (params) {
                 let level = $("#level").val();
                 let newParam = {
                     pageNum: params.pageNumber,
                     pageSize: params.pageSize,
-                    level:level
+                    level: level
                     // provinceId: provinceId,
                     // cityId: cityId,
                     // areaId: areaId,
@@ -137,16 +136,18 @@
                 return newParam;
             },
             columns: [
-                { field: "id", title: "id" },
-                { field: "username", title: "用户名" },
-                { field:"phone", title: "电话"},
-                { field:"email", title: "邮箱"},
-                { field:"level",title:"级别",
-                    formatter : function (value,row,index) {
-                        return value=='1'?"管理员":"普通用户";
+                {field: "id", title: "id"},
+                {field: "username", title: "用户名"},
+                {field: "phone", title: "电话"},
+                {field: "email", title: "邮箱"},
+                {
+                    field: "level", title: "级别",
+                    formatter: function (value, row, index) {
+                        return value == '1' ? "管理员" : "普通用户";
                     }
                 },
-                { title: "操作",
+                {
+                    title: "操作",
                     formatter: function (value, row, index) {
                         let update = "<button type='button' class='btn btn-primary' id='update' >修改</button>";
                         let del = "<button type='button' class='btn btn-danger' id='del'>删除</button>";
@@ -156,17 +157,18 @@
                 }]
         });
     }
+
     window.userEvents = {
-        'click #del': function(event, value, row, index) {
+        'click #del': function (event, value, row, index) {
             let id = row.id;
 
             let action = path + '/admin/user/delete?id=' + id;
-            if(confirm('确定要删除吗？')) {
+            if (confirm('确定要删除吗？')) {
                 $.ajax({
                     url: action,
-                    type:"post",
-                    dataType:"text",
-                    success:function (msg) {
+                    type: "post",
+                    dataType: "text",
+                    success: function (msg) {
                         console.log(msg);
                         $("#userTable").bootstrapTable('refresh');
                     }
@@ -174,20 +176,17 @@
             }
         },
 
-        'click #update': function(event, value, row, index) {
-                let updateId = row.id;
-                let action = path + '/admin/user/update?id=' + updateId;
-                window.location.href=action;
+        'click #update': function (event, value, row, index) {
+            let updateId = row.id;
+            let action = path + '/admin/user/update?id=' + updateId;
+            window.location.href = action;
         }
     }
 
 
-
-
-
 </script>
 
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<script charset="UTF-8" src="http://tajs.qq.com/stats?sId=9051096" type="text/javascript"></script>
 <!--统计代码，可删除-->
 
 </body>

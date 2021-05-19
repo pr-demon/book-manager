@@ -1,23 +1,23 @@
-$(function() {
+$(function () {
 
     Morris.Line({
         element: 'morris-one-line-chart',
-            data: [
-                { year: '2008', value: 5 },
-                { year: '2009', value: 10 },
-                { year: '2010', value: 8 },
-                { year: '2011', value: 22 },
-                { year: '2012', value: 8 },
-                { year: '2014', value: 10 },
-                { year: '2015', value: 5 }
-            ],
+        data: [
+            {year: '2008', value: 5},
+            {year: '2009', value: 10},
+            {year: '2010', value: 8},
+            {year: '2011', value: 22},
+            {year: '2012', value: 8},
+            {year: '2014', value: 10},
+            {year: '2015', value: 5}
+        ],
         xkey: 'year',
         ykeys: ['value'],
         resize: true,
-        lineWidth:4,
+        lineWidth: 4,
         labels: ['Value'],
         lineColors: ['#1ab394'],
-        pointSize:5,
+        pointSize: 5,
     });
 
     Morris.Area({
@@ -79,9 +79,9 @@ $(function() {
         pointSize: 2,
         hideHover: 'auto',
         resize: true,
-        lineColors: ['#87d6c6', '#54cdb4','#1ab394'],
-        lineWidth:2,
-        pointSize:1,
+        lineColors: ['#87d6c6', '#54cdb4', '#1ab394'],
+        lineWidth: 2,
+        pointSize: 1,
     });
 
     Morris.Donut({
@@ -97,7 +97,7 @@ $(function() {
             value: 20
         }],
         resize: true,
-        colors: ['#87d6c6', '#54cdb4','#1ab394'],
+        colors: ['#87d6c6', '#54cdb4', '#1ab394'],
     });
 
     Morris.Bar({
@@ -175,7 +175,7 @@ $(function() {
         labels: ['A系列', 'B系列'],
         hideHover: 'auto',
         resize: true,
-        lineColors: ['#54cdb4','#1ab394'],
+        lineColors: ['#54cdb4', '#1ab394'],
     });
 
 });

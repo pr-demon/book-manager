@@ -1,9 +1,6 @@
 package com.qlu.controller.admin;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.qlu.bean.Book;
-import com.qlu.bean.StackRoom;
 import com.qlu.bean.User;
 import com.qlu.common.bean.Page;
 import com.qlu.service.IUserService;
@@ -14,13 +11,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -31,19 +29,19 @@ public class UserController {
     private IUserService userService;
 
     @GetMapping("/add")
-    public String to_add(){
+    public String to_add() {
         return "admin/user/add";
     }
 
     @PostMapping("/add")
-    public String add(User user, Model model){
+    public String add(User user, Model model) {
         QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
-        userQueryWrapper.eq("username",user.getUsername());
+        userQueryWrapper.eq("username", user.getUsername());
         User one = userService.getOne(userQueryWrapper);
-        if (one!=null&&one.getUsername()!=""){
-            model.addAttribute("message","此名称已被占用");
+        if (one != null && one.getUsername() != "") {
+            model.addAttribute("message", "此名称已被占用");
             return "/admin/user/add";
-        }else {
+        } else {
             user.setLevel(1);
             userService.save(user);
         }
@@ -51,19 +49,19 @@ public class UserController {
     }
 
     @GetMapping("/list")
-    public String to_list(){
+    public String to_list() {
         return "admin/user/list";
     }
 
     @GetMapping("/queryList")
     @ResponseBody
-    public Page<User> queryList(Integer pageNum,Integer pageSize,Integer level){
+    public Page<User> queryList(Integer pageNum, Integer pageSize, Integer level) {
         QueryWrapper<User> userWrapper = new QueryWrapper<>();
-        userWrapper.notIn("level",2);
-        if (level!=null){
-            userWrapper.eq("level",level);
+        userWrapper.notIn("level", 2);
+        if (level != null) {
+            userWrapper.eq("level", level);
         }
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page page = new com.baomidou.mybatisplus.extension.plugins.pagination.Page(pageNum,pageSize);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page page = new com.baomidou.mybatisplus.extension.plugins.pagination.Page(pageNum, pageSize);
         com.baomidou.mybatisplus.extension.plugins.pagination.Page page_mybatisPlus = userService.page(page, userWrapper);
 
         Page<User> res = new Page<>(pageSize, page_mybatisPlus);
@@ -73,26 +71,26 @@ public class UserController {
 
     @PostMapping("/delete")
     @ResponseBody
-    public String deleteUser(int id){
+    public String deleteUser(int id) {
         boolean b = userService.removeById(id);
         return "success";
     }
 
     @GetMapping("/update")
-    public String updateUser(int id,Model model){
+    public String updateUser(int id, Model model) {
         User user = userService.getById(id);
-        model.addAttribute("updateUser",user);
+        model.addAttribute("updateUser", user);
         return "/admin/user/edit";
     }
 
     @PostMapping("/edit")
-    public String edit(User user){
+    public String edit(User user) {
         boolean b = userService.updateById(user);
         return "redirect:/admin/user/list";
     }
 
     @RequestMapping("/exportUser")
-    public void exportBookInfo(HttpServletResponse response){
+    public void exportBookInfo(HttpServletResponse response) {
         XSSFWorkbook xssfWorkbook = new XSSFWorkbook();
         XSSFSheet sheet = xssfWorkbook.createSheet();
         Row row = sheet.createRow(0);
@@ -106,7 +104,7 @@ public class UserController {
         List<User> list = userService.list();
 
         int index = 1;
-        for (User user: list){
+        for (User user : list) {
 
             String username = user.getUsername();
             String email = user.getEmail();
@@ -114,12 +112,12 @@ public class UserController {
             String password = user.getPassword();
             Integer l = user.getLevel();
             String level = null;
-            if (l==0){
+            if (l == 0) {
                 level = "普通用户";
-            }else if (l==1){
+            } else if (l == 1) {
                 level = "管理员";
-            }else{
-                level="超级管理员";
+            } else {
+                level = "超级管理员";
             }
 
 

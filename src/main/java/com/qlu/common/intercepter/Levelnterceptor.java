@@ -11,9 +11,9 @@ public class Levelnterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HttpSession session = request.getSession();
-        User user = (User)session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         Integer level = user.getLevel();
-        if (level>0){
+        if (level > 0) {
             //true是管理员
             return true;
         }

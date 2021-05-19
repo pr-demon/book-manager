@@ -1,65 +1,65 @@
 $(function () {
     var lineChart = echarts.init(document.getElementById("echarts-line-chart"));
     var lineoption = {
-        title : {
+        title: {
             text: '未来一周气温变化'
         },
-        tooltip : {
+        tooltip: {
             trigger: 'axis'
         },
         legend: {
-            data:['最高气温','最低气温']
+            data: ['最高气温', '最低气温']
         },
-        grid:{
-            x:40,
-            x2:40,
-            y2:24
+        grid: {
+            x: 40,
+            x2: 40,
+            y2: 24
         },
-        calculable : true,
-        xAxis : [
+        calculable: true,
+        xAxis: [
             {
-                type : 'category',
-                boundaryGap : false,
-                data : ['周一','周二','周三','周四','周五','周六','周日']
+                type: 'category',
+                boundaryGap: false,
+                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
             }
         ],
-        yAxis : [
+        yAxis: [
             {
-                type : 'value',
-                axisLabel : {
+                type: 'value',
+                axisLabel: {
                     formatter: '{value} °C'
                 }
             }
         ],
-        series : [
+        series: [
             {
-                name:'最高气温',
-                type:'line',
-                data:[11, 11, 15, 13, 12, 13, 10],
-                markPoint : {
-                    data : [
-                        {type : 'max', name: '最大值'},
-                        {type : 'min', name: '最小值'}
+                name: '最高气温',
+                type: 'line',
+                data: [11, 11, 15, 13, 12, 13, 10],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
                     ]
                 },
-                markLine : {
-                    data : [
-                        {type : 'average', name: '平均值'}
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
                     ]
                 }
             },
             {
-                name:'最低气温',
-                type:'line',
-                data:[1, -2, 2, 5, 3, 2, 0],
-                markPoint : {
-                    data : [
-                        {name : '周最低', value : -2, xAxis: 1, yAxis: -1.5}
+                name: '最低气温',
+                type: 'line',
+                data: [1, -2, 2, 5, 3, 2, 0],
+                markPoint: {
+                    data: [
+                        {name: '周最低', value: -2, xAxis: 1, yAxis: -1.5}
                     ]
                 },
-                markLine : {
-                    data : [
-                        {type : 'average', name : '平均值'}
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
                     ]
                 }
             }
@@ -70,62 +70,62 @@ $(function () {
 
     var barChart = echarts.init(document.getElementById("echarts-bar-chart"));
     var baroption = {
-        title : {
+        title: {
             text: '某地区蒸发量和降水量'
         },
-        tooltip : {
+        tooltip: {
             trigger: 'axis'
         },
         legend: {
-            data:['蒸发量','降水量']
+            data: ['蒸发量', '降水量']
         },
-        grid:{
-            x:30,
-            x2:40,
-            y2:24
+        grid: {
+            x: 30,
+            x2: 40,
+            y2: 24
         },
-        calculable : true,
-        xAxis : [
+        calculable: true,
+        xAxis: [
             {
-                type : 'category',
-                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+                type: 'category',
+                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
             }
         ],
-        yAxis : [
+        yAxis: [
             {
-                type : 'value'
+                type: 'value'
             }
         ],
-        series : [
+        series: [
             {
-                name:'蒸发量',
-                type:'bar',
-                data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
-                markPoint : {
-                    data : [
-                        {type : 'max', name: '最大值'},
-                        {type : 'min', name: '最小值'}
+                name: '蒸发量',
+                type: 'bar',
+                data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
                     ]
                 },
-                markLine : {
-                    data : [
-                        {type : 'average', name: '平均值'}
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
                     ]
                 }
             },
             {
-                name:'降水量',
-                type:'bar',
-                data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
-                markPoint : {
-                    data : [
-                        {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183, symbolSize:18},
-                        {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                name: '降水量',
+                type: 'bar',
+                data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                markPoint: {
+                    data: [
+                        {name: '年最高', value: 182.2, xAxis: 7, yAxis: 183, symbolSize: 18},
+                        {name: '年最低', value: 2.3, xAxis: 11, yAxis: 3}
                     ]
                 },
-                markLine : {
-                    data : [
-                        {type : 'average', name : '平均值'}
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
                     ]
                 }
             }
@@ -137,63 +137,62 @@ $(function () {
 
     var scatterChart = echarts.init(document.getElementById("echarts-scatter-chart"));
     var scatteroption = {
-        title : {
+        title: {
             text: '男性女性身高体重分布',
             subtext: '抽样调查来自: Heinz  2003'
         },
-        tooltip : {
+        tooltip: {
             trigger: 'axis',
-            showDelay : 0,
-            axisPointer:{
-                type : 'cross',
+            showDelay: 0,
+            axisPointer: {
+                type: 'cross',
                 lineStyle: {
-                    type : 'dashed',
-                    width : 1
+                    type: 'dashed',
+                    width: 1
                 }
             }
         },
         legend: {
-            data:['女性','男性']
+            data: ['女性', '男性']
         },
-        grid:{
-            x:45,
-            x2:40,
-            y2:24
+        grid: {
+            x: 45,
+            x2: 40,
+            y2: 24
         },
-        xAxis : [
+        xAxis: [
             {
-                type : 'value',
-                scale:true,
-                axisLabel : {
+                type: 'value',
+                scale: true,
+                axisLabel: {
                     formatter: '{value} cm'
                 }
             }
         ],
-        yAxis : [
+        yAxis: [
             {
-                type : 'value',
-                scale:true,
-                axisLabel : {
+                type: 'value',
+                scale: true,
+                axisLabel: {
                     formatter: '{value} kg'
                 }
             }
         ],
-        series : [
+        series: [
             {
-                name:'女性',
-                type:'scatter',
-                tooltip : {
+                name: '女性',
+                type: 'scatter',
+                tooltip: {
                     trigger: 'item',
-                    formatter : function (params) {
+                    formatter: function (params) {
                         if (params.value.length > 1) {
                             return params.seriesName + ' :<br/>'
-                               + params.value[0] + 'cm '
-                               + params.value[1] + 'kg ';
-                        }
-                        else {
+                                + params.value[0] + 'cm '
+                                + params.value[1] + 'kg ';
+                        } else {
                             return params.seriesName + ' :<br/>'
-                               + params.name + ' : '
-                               + params.value + 'kg ';
+                                + params.name + ' : '
+                                + params.value + 'kg ';
                         }
                     }
                 },
@@ -250,33 +249,32 @@ $(function () {
                     [169.5, 67.3], [160.0, 75.5], [172.7, 68.2], [162.6, 61.4], [157.5, 76.8],
                     [176.5, 71.8], [164.4, 55.5], [160.7, 48.6], [174.0, 66.4], [163.8, 67.3]
                 ],
-                markPoint : {
-                    data : [
-                        {type : 'max', name: '最大值'},
-                        {type : 'min', name: '最小值'}
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
                     ]
                 },
-                markLine : {
-                    data : [
-                        {type : 'average', name: '平均值'}
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
                     ]
                 }
             },
             {
-                name:'男性',
-                type:'scatter',
-                tooltip : {
+                name: '男性',
+                type: 'scatter',
+                tooltip: {
                     trigger: 'item',
-                    formatter : function (params) {
+                    formatter: function (params) {
                         if (params.value.length > 1) {
                             return params.seriesName + ' :<br/>'
-                               + params.value[0] + 'cm '
-                               + params.value[1] + 'kg ';
-                        }
-                        else {
+                                + params.value[0] + 'cm '
+                                + params.value[1] + 'kg ';
+                        } else {
                             return params.seriesName + ' :<br/>'
-                               + params.name + ' : '
-                               + params.value + 'kg ';
+                                + params.name + ' : '
+                                + params.value + 'kg ';
                         }
                     }
                 },
@@ -331,15 +329,15 @@ $(function () {
                     [170.2, 62.3], [177.8, 82.7], [179.1, 79.1], [190.5, 98.2], [177.8, 84.1],
                     [180.3, 83.2], [180.3, 83.2]
                 ],
-                markPoint : {
-                    data : [
-                        {type : 'max', name: '最大值'},
-                        {type : 'min', name: '最小值'}
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
                     ]
                 },
-                markLine : {
-                    data : [
-                        {type : 'average', name: '平均值'}
+                markLine: {
+                    data: [
+                        {type: 'average', name: '平均值'}
                     ]
                 }
             }
@@ -351,10 +349,10 @@ $(function () {
 
     var kChart = echarts.init(document.getElementById("echarts-k-chart"));
     var koption = {
-        title : {
+        title: {
             text: '2013年上半年上证指数'
         },
-        tooltip : {
+        tooltip: {
             trigger: 'axis',
             formatter: function (params) {
                 var res = params[0].seriesName + ' ' + params[0].name;
@@ -364,25 +362,25 @@ $(function () {
             }
         },
         legend: {
-            data:['上证指数']
+            data: ['上证指数']
         },
-        grid:{
-            x:40,
-            x2:2
+        grid: {
+            x: 40,
+            x2: 2
         },
-        dataZoom : {
-            show : true,
+        dataZoom: {
+            show: true,
             realtime: true,
-            start : 50,
-            end : 100
+            start: 50,
+            end: 100
         },
-        xAxis : [
+        xAxis: [
             {
-                type : 'category',
-                boundaryGap : true,
-                axisTick: {onGap:false},
-                splitLine: {show:false},
-                data : [
+                type: 'category',
+                boundaryGap: true,
+                axisTick: {onGap: false},
+                splitLine: {show: false},
+                data: [
                     "2013/1/24", "2013/1/25", "2013/1/28", "2013/1/29", "2013/1/30",
                     "2013/1/31", "2013/2/1", "2013/2/4", "2013/2/5", "2013/2/6",
                     "2013/2/7", "2013/2/8", "2013/2/18", "2013/2/19", "2013/2/20",
@@ -404,106 +402,106 @@ $(function () {
                 ]
             }
         ],
-        yAxis : [
+        yAxis: [
             {
-                type : 'value',
-                scale:true,
+                type: 'value',
+                scale: true,
                 boundaryGap: [0.01, 0.01]
             }
         ],
-        series : [
+        series: [
             {
-                name:'上证指数',
-                type:'k',
-                data:[ // 开盘，收盘，最低，最高
-                    [2320.26,2302.6,2287.3,2362.94],
-                    [2300,2291.3,2288.26,2308.38],
-                    [2295.35,2346.5,2295.35,2346.92],
-                    [2347.22,2358.98,2337.35,2363.8],
-                    [2360.75,2382.48,2347.89,2383.76],
-                    [2383.43,2385.42,2371.23,2391.82],
-                    [2377.41,2419.02,2369.57,2421.15],
-                    [2425.92,2428.15,2417.58,2440.38],
-                    [2411,2433.13,2403.3,2437.42],
-                    [2432.68,2434.48,2427.7,2441.73],
-                    [2430.69,2418.53,2394.22,2433.89],
-                    [2416.62,2432.4,2414.4,2443.03],
-                    [2441.91,2421.56,2415.43,2444.8],
-                    [2420.26,2382.91,2373.53,2427.07],
-                    [2383.49,2397.18,2370.61,2397.94],
-                    [2378.82,2325.95,2309.17,2378.82],
-                    [2322.94,2314.16,2308.76,2330.88],
-                    [2320.62,2325.82,2315.01,2338.78],
-                    [2313.74,2293.34,2289.89,2340.71],
-                    [2297.77,2313.22,2292.03,2324.63],
-                    [2322.32,2365.59,2308.92,2366.16],
-                    [2364.54,2359.51,2330.86,2369.65],
-                    [2332.08,2273.4,2259.25,2333.54],
-                    [2274.81,2326.31,2270.1,2328.14],
-                    [2333.61,2347.18,2321.6,2351.44],
-                    [2340.44,2324.29,2304.27,2352.02],
-                    [2326.42,2318.61,2314.59,2333.67],
-                    [2314.68,2310.59,2296.58,2320.96],
-                    [2309.16,2286.6,2264.83,2333.29],
-                    [2282.17,2263.97,2253.25,2286.33],
-                    [2255.77,2270.28,2253.31,2276.22],
-                    [2269.31,2278.4,2250,2312.08],
-                    [2267.29,2240.02,2239.21,2276.05],
-                    [2244.26,2257.43,2232.02,2261.31],
-                    [2257.74,2317.37,2257.42,2317.86],
-                    [2318.21,2324.24,2311.6,2330.81],
-                    [2321.4,2328.28,2314.97,2332],
-                    [2334.74,2326.72,2319.91,2344.89],
-                    [2318.58,2297.67,2281.12,2319.99],
-                    [2299.38,2301.26,2289,2323.48],
-                    [2273.55,2236.3,2232.91,2273.55],
-                    [2238.49,2236.62,2228.81,2246.87],
-                    [2229.46,2234.4,2227.31,2243.95],
-                    [2234.9,2227.74,2220.44,2253.42],
-                    [2232.69,2225.29,2217.25,2241.34],
-                    [2196.24,2211.59,2180.67,2212.59],
-                    [2215.47,2225.77,2215.47,2234.73],
-                    [2224.93,2226.13,2212.56,2233.04],
-                    [2236.98,2219.55,2217.26,2242.48],
-                    [2218.09,2206.78,2204.44,2226.26],
-                    [2199.91,2181.94,2177.39,2204.99],
-                    [2169.63,2194.85,2165.78,2196.43],
-                    [2195.03,2193.8,2178.47,2197.51],
-                    [2181.82,2197.6,2175.44,2206.03],
-                    [2201.12,2244.64,2200.58,2250.11],
-                    [2236.4,2242.17,2232.26,2245.12],
-                    [2242.62,2184.54,2182.81,2242.62],
-                    [2187.35,2218.32,2184.11,2226.12],
-                    [2213.19,2199.31,2191.85,2224.63],
-                    [2203.89,2177.91,2173.86,2210.58],
-                    [2170.78,2174.12,2161.14,2179.65],
-                    [2179.05,2205.5,2179.05,2222.81],
-                    [2212.5,2231.17,2212.5,2236.07],
-                    [2227.86,2235.57,2219.44,2240.26],
-                    [2242.39,2246.3,2235.42,2255.21],
-                    [2246.96,2232.97,2221.38,2247.86],
-                    [2228.82,2246.83,2225.81,2247.67],
-                    [2247.68,2241.92,2231.36,2250.85],
-                    [2238.9,2217.01,2205.87,2239.93],
-                    [2217.09,2224.8,2213.58,2225.19],
-                    [2221.34,2251.81,2210.77,2252.87],
-                    [2249.81,2282.87,2248.41,2288.09],
-                    [2286.33,2299.99,2281.9,2309.39],
-                    [2297.11,2305.11,2290.12,2305.3],
-                    [2303.75,2302.4,2292.43,2314.18],
-                    [2293.81,2275.67,2274.1,2304.95],
-                    [2281.45,2288.53,2270.25,2292.59],
-                    [2286.66,2293.08,2283.94,2301.7],
-                    [2293.4,2321.32,2281.47,2322.1],
-                    [2323.54,2324.02,2321.17,2334.33],
-                    [2316.25,2317.75,2310.49,2325.72],
-                    [2320.74,2300.59,2299.37,2325.53],
-                    [2300.21,2299.25,2294.11,2313.43],
-                    [2297.1,2272.42,2264.76,2297.1],
-                    [2270.71,2270.93,2260.87,2276.86],
-                    [2264.43,2242.11,2240.07,2266.69],
-                    [2242.26,2210.9,2205.07,2250.63],
-                    [2190.1,2148.35,2126.22,2190.1]
+                name: '上证指数',
+                type: 'k',
+                data: [ // 开盘，收盘，最低，最高
+                    [2320.26, 2302.6, 2287.3, 2362.94],
+                    [2300, 2291.3, 2288.26, 2308.38],
+                    [2295.35, 2346.5, 2295.35, 2346.92],
+                    [2347.22, 2358.98, 2337.35, 2363.8],
+                    [2360.75, 2382.48, 2347.89, 2383.76],
+                    [2383.43, 2385.42, 2371.23, 2391.82],
+                    [2377.41, 2419.02, 2369.57, 2421.15],
+                    [2425.92, 2428.15, 2417.58, 2440.38],
+                    [2411, 2433.13, 2403.3, 2437.42],
+                    [2432.68, 2434.48, 2427.7, 2441.73],
+                    [2430.69, 2418.53, 2394.22, 2433.89],
+                    [2416.62, 2432.4, 2414.4, 2443.03],
+                    [2441.91, 2421.56, 2415.43, 2444.8],
+                    [2420.26, 2382.91, 2373.53, 2427.07],
+                    [2383.49, 2397.18, 2370.61, 2397.94],
+                    [2378.82, 2325.95, 2309.17, 2378.82],
+                    [2322.94, 2314.16, 2308.76, 2330.88],
+                    [2320.62, 2325.82, 2315.01, 2338.78],
+                    [2313.74, 2293.34, 2289.89, 2340.71],
+                    [2297.77, 2313.22, 2292.03, 2324.63],
+                    [2322.32, 2365.59, 2308.92, 2366.16],
+                    [2364.54, 2359.51, 2330.86, 2369.65],
+                    [2332.08, 2273.4, 2259.25, 2333.54],
+                    [2274.81, 2326.31, 2270.1, 2328.14],
+                    [2333.61, 2347.18, 2321.6, 2351.44],
+                    [2340.44, 2324.29, 2304.27, 2352.02],
+                    [2326.42, 2318.61, 2314.59, 2333.67],
+                    [2314.68, 2310.59, 2296.58, 2320.96],
+                    [2309.16, 2286.6, 2264.83, 2333.29],
+                    [2282.17, 2263.97, 2253.25, 2286.33],
+                    [2255.77, 2270.28, 2253.31, 2276.22],
+                    [2269.31, 2278.4, 2250, 2312.08],
+                    [2267.29, 2240.02, 2239.21, 2276.05],
+                    [2244.26, 2257.43, 2232.02, 2261.31],
+                    [2257.74, 2317.37, 2257.42, 2317.86],
+                    [2318.21, 2324.24, 2311.6, 2330.81],
+                    [2321.4, 2328.28, 2314.97, 2332],
+                    [2334.74, 2326.72, 2319.91, 2344.89],
+                    [2318.58, 2297.67, 2281.12, 2319.99],
+                    [2299.38, 2301.26, 2289, 2323.48],
+                    [2273.55, 2236.3, 2232.91, 2273.55],
+                    [2238.49, 2236.62, 2228.81, 2246.87],
+                    [2229.46, 2234.4, 2227.31, 2243.95],
+                    [2234.9, 2227.74, 2220.44, 2253.42],
+                    [2232.69, 2225.29, 2217.25, 2241.34],
+                    [2196.24, 2211.59, 2180.67, 2212.59],
+                    [2215.47, 2225.77, 2215.47, 2234.73],
+                    [2224.93, 2226.13, 2212.56, 2233.04],
+                    [2236.98, 2219.55, 2217.26, 2242.48],
+                    [2218.09, 2206.78, 2204.44, 2226.26],
+                    [2199.91, 2181.94, 2177.39, 2204.99],
+                    [2169.63, 2194.85, 2165.78, 2196.43],
+                    [2195.03, 2193.8, 2178.47, 2197.51],
+                    [2181.82, 2197.6, 2175.44, 2206.03],
+                    [2201.12, 2244.64, 2200.58, 2250.11],
+                    [2236.4, 2242.17, 2232.26, 2245.12],
+                    [2242.62, 2184.54, 2182.81, 2242.62],
+                    [2187.35, 2218.32, 2184.11, 2226.12],
+                    [2213.19, 2199.31, 2191.85, 2224.63],
+                    [2203.89, 2177.91, 2173.86, 2210.58],
+                    [2170.78, 2174.12, 2161.14, 2179.65],
+                    [2179.05, 2205.5, 2179.05, 2222.81],
+                    [2212.5, 2231.17, 2212.5, 2236.07],
+                    [2227.86, 2235.57, 2219.44, 2240.26],
+                    [2242.39, 2246.3, 2235.42, 2255.21],
+                    [2246.96, 2232.97, 2221.38, 2247.86],
+                    [2228.82, 2246.83, 2225.81, 2247.67],
+                    [2247.68, 2241.92, 2231.36, 2250.85],
+                    [2238.9, 2217.01, 2205.87, 2239.93],
+                    [2217.09, 2224.8, 2213.58, 2225.19],
+                    [2221.34, 2251.81, 2210.77, 2252.87],
+                    [2249.81, 2282.87, 2248.41, 2288.09],
+                    [2286.33, 2299.99, 2281.9, 2309.39],
+                    [2297.11, 2305.11, 2290.12, 2305.3],
+                    [2303.75, 2302.4, 2292.43, 2314.18],
+                    [2293.81, 2275.67, 2274.1, 2304.95],
+                    [2281.45, 2288.53, 2270.25, 2292.59],
+                    [2286.66, 2293.08, 2283.94, 2301.7],
+                    [2293.4, 2321.32, 2281.47, 2322.1],
+                    [2323.54, 2324.02, 2321.17, 2334.33],
+                    [2316.25, 2317.75, 2310.49, 2325.72],
+                    [2320.74, 2300.59, 2299.37, 2325.53],
+                    [2300.21, 2299.25, 2294.11, 2313.43],
+                    [2297.1, 2272.42, 2264.76, 2297.1],
+                    [2270.71, 2270.93, 2260.87, 2276.86],
+                    [2264.43, 2242.11, 2240.07, 2266.69],
+                    [2242.26, 2210.9, 2205.07, 2250.63],
+                    [2190.1, 2148.35, 2126.22, 2190.1]
                 ]
             }
         ]
@@ -513,33 +511,33 @@ $(function () {
 
     var pieChart = echarts.init(document.getElementById("echarts-pie-chart"));
     var pieoption = {
-        title : {
+        title: {
             text: '某站点用户访问来源',
             subtext: '纯属虚构',
-            x:'center'
+            x: 'center'
         },
-        tooltip : {
+        tooltip: {
             trigger: 'item',
             formatter: "{a} <br/>{b} : {c} ({d}%)"
         },
         legend: {
-            orient : 'vertical',
-            x : 'left',
-            data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+            orient: 'vertical',
+            x: 'left',
+            data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
         },
-        calculable : true,
-        series : [
+        calculable: true,
+        series: [
             {
-                name:'访问来源',
-                type:'pie',
-                radius : '55%',
+                name: '访问来源',
+                type: 'pie',
+                radius: '55%',
                 center: ['50%', '60%'],
-                data:[
-                    {value:335, name:'直接访问'},
-                    {value:310, name:'邮件营销'},
-                    {value:234, name:'联盟广告'},
-                    {value:135, name:'视频广告'},
-                    {value:1548, name:'搜索引擎'}
+                data: [
+                    {value: 335, name: '直接访问'},
+                    {value: 310, name: '邮件营销'},
+                    {value: 234, name: '联盟广告'},
+                    {value: 135, name: '视频广告'},
+                    {value: 1548, name: '搜索引擎'}
                 ]
             }
         ]
@@ -549,44 +547,44 @@ $(function () {
 
     var radarChart = echarts.init(document.getElementById("echarts-radar-chart"));
     var radaroption = {
-        title : {
+        title: {
             text: '预算 vs 开销',
             subtext: '纯属虚构'
         },
-        tooltip : {
+        tooltip: {
             trigger: 'axis'
         },
         legend: {
-            orient : 'vertical',
-            x : 'right',
-            y : 'bottom',
-            data:['预算分配','实际开销']
+            orient: 'vertical',
+            x: 'right',
+            y: 'bottom',
+            data: ['预算分配', '实际开销']
         },
-        polar : [
-           {
-               indicator : [
-                   { text: '销售', max: 6000},
-                   { text: '管理', max: 16000},
-                   { text: '信息技术', max: 30000},
-                   { text: '客服', max: 38000},
-                   { text: '研发', max: 52000},
-                   { text: '市场', max: 25000}
+        polar: [
+            {
+                indicator: [
+                    {text: '销售', max: 6000},
+                    {text: '管理', max: 16000},
+                    {text: '信息技术', max: 30000},
+                    {text: '客服', max: 38000},
+                    {text: '研发', max: 52000},
+                    {text: '市场', max: 25000}
                 ]
             }
         ],
-        calculable : true,
-        series : [
+        calculable: true,
+        series: [
             {
                 name: '预算 vs 开销',
                 type: 'radar',
-                data : [
+                data: [
                     {
-                        value : [4300, 10000, 28000, 35000, 50000, 19000],
-                        name : '预算分配'
+                        value: [4300, 10000, 28000, 35000, 50000, 19000],
+                        name: '预算分配'
                     },
-                     {
-                        value : [5000, 14000, 28000, 31000, 42000, 21000],
-                        name : '实际开销'
+                    {
+                        value: [5000, 14000, 28000, 31000, 42000, 21000],
+                        name: '实际开销'
                     }
                 ]
             }
@@ -598,37 +596,37 @@ $(function () {
 
     var mapChart = echarts.init(document.getElementById("echarts-map-chart"));
     var mapoption = {
-        title : {
+        title: {
             text: 'iphone销量',
             subtext: '纯属虚构',
-            x:'center'
+            x: 'center'
         },
-        tooltip : {
+        tooltip: {
             trigger: 'item'
         },
         legend: {
             orient: 'vertical',
-            x:'left',
-            data:['iphone3','iphone4','iphone5']
+            x: 'left',
+            data: ['iphone3', 'iphone4', 'iphone5']
         },
         dataRange: {
             min: 0,
             max: 2500,
             x: 'left',
             y: 'bottom',
-            text:['高','低'],           // 文本，默认为数值文本
-            calculable : true
+            text: ['高', '低'],           // 文本，默认为数值文本
+            calculable: true
         },
         toolbox: {
             show: true,
-            orient : 'vertical',
+            orient: 'vertical',
             x: 'right',
             y: 'center',
-            feature : {
-                mark : {show: true},
-                dataView : {show: true, readOnly: false},
-                restore : {show: true},
-                saveAsImage : {show: true}
+            feature: {
+                mark: {show: true},
+                dataView: {show: true, readOnly: false},
+                restore: {show: true},
+                saveAsImage: {show: true}
             }
         },
         roamController: {
@@ -638,99 +636,99 @@ $(function () {
                 'china': true
             }
         },
-        series : [
+        series: [
             {
                 name: 'iphone3',
                 type: 'map',
                 mapType: 'china',
                 roam: false,
-                itemStyle:{
-                    normal:{label:{show:true}},
-                    emphasis:{label:{show:true}}
+                itemStyle: {
+                    normal: {label: {show: true}},
+                    emphasis: {label: {show: true}}
                 },
-                data:[
-                    {name: '北京',value: Math.round(Math.random()*1000)},
-                    {name: '天津',value: Math.round(Math.random()*1000)},
-                    {name: '上海',value: Math.round(Math.random()*1000)},
-                    {name: '重庆',value: Math.round(Math.random()*1000)},
-                    {name: '河北',value: Math.round(Math.random()*1000)},
-                    {name: '河南',value: Math.round(Math.random()*1000)},
-                    {name: '云南',value: Math.round(Math.random()*1000)},
-                    {name: '辽宁',value: Math.round(Math.random()*1000)},
-                    {name: '黑龙江',value: Math.round(Math.random()*1000)},
-                    {name: '湖南',value: Math.round(Math.random()*1000)},
-                    {name: '安徽',value: Math.round(Math.random()*1000)},
-                    {name: '山东',value: Math.round(Math.random()*1000)},
-                    {name: '新疆',value: Math.round(Math.random()*1000)},
-                    {name: '江苏',value: Math.round(Math.random()*1000)},
-                    {name: '浙江',value: Math.round(Math.random()*1000)},
-                    {name: '江西',value: Math.round(Math.random()*1000)},
-                    {name: '湖北',value: Math.round(Math.random()*1000)},
-                    {name: '广西',value: Math.round(Math.random()*1000)},
-                    {name: '甘肃',value: Math.round(Math.random()*1000)},
-                    {name: '山西',value: Math.round(Math.random()*1000)},
-                    {name: '内蒙古',value: Math.round(Math.random()*1000)},
-                    {name: '陕西',value: Math.round(Math.random()*1000)},
-                    {name: '吉林',value: Math.round(Math.random()*1000)},
-                    {name: '福建',value: Math.round(Math.random()*1000)},
-                    {name: '贵州',value: Math.round(Math.random()*1000)},
-                    {name: '广东',value: Math.round(Math.random()*1000)},
-                    {name: '青海',value: Math.round(Math.random()*1000)},
-                    {name: '西藏',value: Math.round(Math.random()*1000)},
-                    {name: '四川',value: Math.round(Math.random()*1000)},
-                    {name: '宁夏',value: Math.round(Math.random()*1000)},
-                    {name: '海南',value: Math.round(Math.random()*1000)},
-                    {name: '台湾',value: Math.round(Math.random()*1000)},
-                    {name: '香港',value: Math.round(Math.random()*1000)},
-                    {name: '澳门',value: Math.round(Math.random()*1000)}
+                data: [
+                    {name: '北京', value: Math.round(Math.random() * 1000)},
+                    {name: '天津', value: Math.round(Math.random() * 1000)},
+                    {name: '上海', value: Math.round(Math.random() * 1000)},
+                    {name: '重庆', value: Math.round(Math.random() * 1000)},
+                    {name: '河北', value: Math.round(Math.random() * 1000)},
+                    {name: '河南', value: Math.round(Math.random() * 1000)},
+                    {name: '云南', value: Math.round(Math.random() * 1000)},
+                    {name: '辽宁', value: Math.round(Math.random() * 1000)},
+                    {name: '黑龙江', value: Math.round(Math.random() * 1000)},
+                    {name: '湖南', value: Math.round(Math.random() * 1000)},
+                    {name: '安徽', value: Math.round(Math.random() * 1000)},
+                    {name: '山东', value: Math.round(Math.random() * 1000)},
+                    {name: '新疆', value: Math.round(Math.random() * 1000)},
+                    {name: '江苏', value: Math.round(Math.random() * 1000)},
+                    {name: '浙江', value: Math.round(Math.random() * 1000)},
+                    {name: '江西', value: Math.round(Math.random() * 1000)},
+                    {name: '湖北', value: Math.round(Math.random() * 1000)},
+                    {name: '广西', value: Math.round(Math.random() * 1000)},
+                    {name: '甘肃', value: Math.round(Math.random() * 1000)},
+                    {name: '山西', value: Math.round(Math.random() * 1000)},
+                    {name: '内蒙古', value: Math.round(Math.random() * 1000)},
+                    {name: '陕西', value: Math.round(Math.random() * 1000)},
+                    {name: '吉林', value: Math.round(Math.random() * 1000)},
+                    {name: '福建', value: Math.round(Math.random() * 1000)},
+                    {name: '贵州', value: Math.round(Math.random() * 1000)},
+                    {name: '广东', value: Math.round(Math.random() * 1000)},
+                    {name: '青海', value: Math.round(Math.random() * 1000)},
+                    {name: '西藏', value: Math.round(Math.random() * 1000)},
+                    {name: '四川', value: Math.round(Math.random() * 1000)},
+                    {name: '宁夏', value: Math.round(Math.random() * 1000)},
+                    {name: '海南', value: Math.round(Math.random() * 1000)},
+                    {name: '台湾', value: Math.round(Math.random() * 1000)},
+                    {name: '香港', value: Math.round(Math.random() * 1000)},
+                    {name: '澳门', value: Math.round(Math.random() * 1000)}
                 ]
             },
             {
                 name: 'iphone4',
                 type: 'map',
                 mapType: 'china',
-                itemStyle:{
-                    normal:{label:{show:true}},
-                    emphasis:{label:{show:true}}
+                itemStyle: {
+                    normal: {label: {show: true}},
+                    emphasis: {label: {show: true}}
                 },
-                data:[
-                    {name: '北京',value: Math.round(Math.random()*1000)},
-                    {name: '天津',value: Math.round(Math.random()*1000)},
-                    {name: '上海',value: Math.round(Math.random()*1000)},
-                    {name: '重庆',value: Math.round(Math.random()*1000)},
-                    {name: '河北',value: Math.round(Math.random()*1000)},
-                    {name: '安徽',value: Math.round(Math.random()*1000)},
-                    {name: '新疆',value: Math.round(Math.random()*1000)},
-                    {name: '浙江',value: Math.round(Math.random()*1000)},
-                    {name: '江西',value: Math.round(Math.random()*1000)},
-                    {name: '山西',value: Math.round(Math.random()*1000)},
-                    {name: '内蒙古',value: Math.round(Math.random()*1000)},
-                    {name: '吉林',value: Math.round(Math.random()*1000)},
-                    {name: '福建',value: Math.round(Math.random()*1000)},
-                    {name: '广东',value: Math.round(Math.random()*1000)},
-                    {name: '西藏',value: Math.round(Math.random()*1000)},
-                    {name: '四川',value: Math.round(Math.random()*1000)},
-                    {name: '宁夏',value: Math.round(Math.random()*1000)},
-                    {name: '香港',value: Math.round(Math.random()*1000)},
-                    {name: '澳门',value: Math.round(Math.random()*1000)}
+                data: [
+                    {name: '北京', value: Math.round(Math.random() * 1000)},
+                    {name: '天津', value: Math.round(Math.random() * 1000)},
+                    {name: '上海', value: Math.round(Math.random() * 1000)},
+                    {name: '重庆', value: Math.round(Math.random() * 1000)},
+                    {name: '河北', value: Math.round(Math.random() * 1000)},
+                    {name: '安徽', value: Math.round(Math.random() * 1000)},
+                    {name: '新疆', value: Math.round(Math.random() * 1000)},
+                    {name: '浙江', value: Math.round(Math.random() * 1000)},
+                    {name: '江西', value: Math.round(Math.random() * 1000)},
+                    {name: '山西', value: Math.round(Math.random() * 1000)},
+                    {name: '内蒙古', value: Math.round(Math.random() * 1000)},
+                    {name: '吉林', value: Math.round(Math.random() * 1000)},
+                    {name: '福建', value: Math.round(Math.random() * 1000)},
+                    {name: '广东', value: Math.round(Math.random() * 1000)},
+                    {name: '西藏', value: Math.round(Math.random() * 1000)},
+                    {name: '四川', value: Math.round(Math.random() * 1000)},
+                    {name: '宁夏', value: Math.round(Math.random() * 1000)},
+                    {name: '香港', value: Math.round(Math.random() * 1000)},
+                    {name: '澳门', value: Math.round(Math.random() * 1000)}
                 ]
             },
             {
                 name: 'iphone5',
                 type: 'map',
                 mapType: 'china',
-                itemStyle:{
-                    normal:{label:{show:true}},
-                    emphasis:{label:{show:true}}
+                itemStyle: {
+                    normal: {label: {show: true}},
+                    emphasis: {label: {show: true}}
                 },
-                data:[
-                    {name: '北京',value: Math.round(Math.random()*1000)},
-                    {name: '天津',value: Math.round(Math.random()*1000)},
-                    {name: '上海',value: Math.round(Math.random()*1000)},
-                    {name: '广东',value: Math.round(Math.random()*1000)},
-                    {name: '台湾',value: Math.round(Math.random()*1000)},
-                    {name: '香港',value: Math.round(Math.random()*1000)},
-                    {name: '澳门',value: Math.round(Math.random()*1000)}
+                data: [
+                    {name: '北京', value: Math.round(Math.random() * 1000)},
+                    {name: '天津', value: Math.round(Math.random() * 1000)},
+                    {name: '上海', value: Math.round(Math.random() * 1000)},
+                    {name: '广东', value: Math.round(Math.random() * 1000)},
+                    {name: '台湾', value: Math.round(Math.random() * 1000)},
+                    {name: '香港', value: Math.round(Math.random() * 1000)},
+                    {name: '澳门', value: Math.round(Math.random() * 1000)}
                 ]
             }
         ]
@@ -740,13 +738,13 @@ $(function () {
 
     var chordChart = echarts.init(document.getElementById("echarts-chord-chart"));
     var chordoption = {
-        title : {
+        title: {
             text: '测试数据',
             subtext: 'From d3.js',
-            x:'right',
-            y:'bottom'
+            x: 'right',
+            y: 'bottom'
         },
-        tooltip : {
+        tooltip: {
             trigger: 'item',
             formatter: function (params) {
                 if (params.indicator2) { // is edge
@@ -757,42 +755,42 @@ $(function () {
             }
         },
         toolbox: {
-            show : true,
-            feature : {
-                restore : {show: true},
+            show: true,
+            feature: {
+                restore: {show: true},
                 magicType: {show: true, type: ['force', 'chord']},
-                saveAsImage : {show: true}
+                saveAsImage: {show: true}
             }
         },
         legend: {
             x: 'left',
-            data:['group1','group2', 'group3', 'group4']
+            data: ['group1', 'group2', 'group3', 'group4']
         },
-        series : [
+        series: [
             {
-                type:'chord',
-                sort : 'ascending',
-                sortSub : 'descending',
-                showScale : true,
-                showScaleText : true,
-                data : [
-                    {name : 'group1'},
-                    {name : 'group2'},
-                    {name : 'group3'},
-                    {name : 'group4'}
+                type: 'chord',
+                sort: 'ascending',
+                sortSub: 'descending',
+                showScale: true,
+                showScaleText: true,
+                data: [
+                    {name: 'group1'},
+                    {name: 'group2'},
+                    {name: 'group3'},
+                    {name: 'group4'}
                 ],
-                itemStyle : {
-                    normal : {
-                        label : {
-                            show : false
+                itemStyle: {
+                    normal: {
+                        label: {
+                            show: false
                         }
                     }
                 },
-                matrix : [
-                    [11975,  5871, 8916, 2868],
-                    [ 1951, 10048, 2060, 6171],
-                    [ 8010, 16145, 8090, 8045],
-                    [ 1013,   990,  940, 6907]
+                matrix: [
+                    [11975, 5871, 8916, 2868],
+                    [1951, 10048, 2060, 6171],
+                    [8010, 16145, 8090, 8045],
+                    [1013, 990, 940, 6907]
                 ]
             }
         ]
@@ -802,35 +800,35 @@ $(function () {
     $(window).resize(chordChart.resize);
 
     var forceChart = echarts.init(document.getElementById("echarts-force-chart"));
-    var forceoption ={
-        title : {
+    var forceoption = {
+        title: {
             text: '人物关系：乔布斯',
             subtext: '数据来自人立方',
-            x:'right',
-            y:'bottom'
+            x: 'right',
+            y: 'bottom'
         },
-        tooltip : {
+        tooltip: {
             trigger: 'item',
             formatter: '{a} : {b}'
         },
         toolbox: {
-            show : true,
-            feature : {
-                restore : {show: true},
+            show: true,
+            feature: {
+                restore: {show: true},
                 magicType: {show: true, type: ['force', 'chord']},
-                saveAsImage : {show: true}
+                saveAsImage: {show: true}
             }
         },
         legend: {
             x: 'left',
-            data:['家人','朋友']
+            data: ['家人', '朋友']
         },
-        series : [
+        series: [
             {
-                type:'force',
-                name : "人物关系",
+                type: 'force',
+                name: "人物关系",
                 ribbonType: false,
-                categories : [
+                categories: [
                     {
                         name: '人物'
                     },
@@ -838,7 +836,7 @@ $(function () {
                         name: '家人'
                     },
                     {
-                        name:'朋友'
+                        name: '朋友'
                     }
                 ],
                 itemStyle: {
@@ -849,10 +847,10 @@ $(function () {
                                 color: '#333'
                             }
                         },
-                        nodeStyle : {
-                            brushType : 'both',
-                            borderColor : 'rgba(255,215,0,0.4)',
-                            borderWidth : 1
+                        nodeStyle: {
+                            brushType: 'both',
+                            borderColor: 'rgba(255,215,0,0.4)',
+                            borderWidth: 1
                         },
                         linkStyle: {
                             type: 'curve'
@@ -863,50 +861,50 @@ $(function () {
                             show: false
                             // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
                         },
-                        nodeStyle : {
+                        nodeStyle: {
                             //r: 30
                         },
-                        linkStyle : {}
+                        linkStyle: {}
                     }
                 },
                 useWorker: false,
-                minRadius : 15,
-                maxRadius : 25,
+                minRadius: 15,
+                maxRadius: 25,
                 gravity: 1.1,
                 scaling: 1.1,
                 roam: 'move',
-                nodes:[
-                    {category:0, name: '乔布斯', value : 10},
-                    {category:1, name: '丽萨-乔布斯',value : 2},
-                    {category:1, name: '保罗-乔布斯',value : 3},
-                    {category:1, name: '克拉拉-乔布斯',value : 3},
-                    {category:1, name: '劳伦-鲍威尔',value : 7},
-                    {category:2, name: '史蒂夫-沃兹尼艾克',value : 5},
-                    {category:2, name: '奥巴马',value : 8},
-                    {category:2, name: '比尔-盖茨',value : 9},
-                    {category:2, name: '乔纳森-艾夫',value : 4},
-                    {category:2, name: '蒂姆-库克',value : 4},
-                    {category:2, name: '龙-韦恩',value : 1},
+                nodes: [
+                    {category: 0, name: '乔布斯', value: 10},
+                    {category: 1, name: '丽萨-乔布斯', value: 2},
+                    {category: 1, name: '保罗-乔布斯', value: 3},
+                    {category: 1, name: '克拉拉-乔布斯', value: 3},
+                    {category: 1, name: '劳伦-鲍威尔', value: 7},
+                    {category: 2, name: '史蒂夫-沃兹尼艾克', value: 5},
+                    {category: 2, name: '奥巴马', value: 8},
+                    {category: 2, name: '比尔-盖茨', value: 9},
+                    {category: 2, name: '乔纳森-艾夫', value: 4},
+                    {category: 2, name: '蒂姆-库克', value: 4},
+                    {category: 2, name: '龙-韦恩', value: 1},
                 ],
-                links : [
-                    {source : '丽萨-乔布斯', target : '乔布斯', weight : 1, name: '女儿'},
-                    {source : '保罗-乔布斯', target : '乔布斯', weight : 2, name: '父亲'},
-                    {source : '克拉拉-乔布斯', target : '乔布斯', weight : 1, name: '母亲'},
-                    {source : '劳伦-鲍威尔', target : '乔布斯', weight : 2},
-                    {source : '史蒂夫-沃兹尼艾克', target : '乔布斯', weight : 3, name: '合伙人'},
-                    {source : '奥巴马', target : '乔布斯', weight : 1},
-                    {source : '比尔-盖茨', target : '乔布斯', weight : 6, name: '竞争对手'},
-                    {source : '乔纳森-艾夫', target : '乔布斯', weight : 1, name: '爱将'},
-                    {source : '蒂姆-库克', target : '乔布斯', weight : 1},
-                    {source : '龙-韦恩', target : '乔布斯', weight : 1},
-                    {source : '克拉拉-乔布斯', target : '保罗-乔布斯', weight : 1},
-                    {source : '奥巴马', target : '保罗-乔布斯', weight : 1},
-                    {source : '奥巴马', target : '克拉拉-乔布斯', weight : 1},
-                    {source : '奥巴马', target : '劳伦-鲍威尔', weight : 1},
-                    {source : '奥巴马', target : '史蒂夫-沃兹尼艾克', weight : 1},
-                    {source : '比尔-盖茨', target : '奥巴马', weight : 6},
-                    {source : '比尔-盖茨', target : '克拉拉-乔布斯', weight : 1},
-                    {source : '蒂姆-库克', target : '奥巴马', weight : 1}
+                links: [
+                    {source: '丽萨-乔布斯', target: '乔布斯', weight: 1, name: '女儿'},
+                    {source: '保罗-乔布斯', target: '乔布斯', weight: 2, name: '父亲'},
+                    {source: '克拉拉-乔布斯', target: '乔布斯', weight: 1, name: '母亲'},
+                    {source: '劳伦-鲍威尔', target: '乔布斯', weight: 2},
+                    {source: '史蒂夫-沃兹尼艾克', target: '乔布斯', weight: 3, name: '合伙人'},
+                    {source: '奥巴马', target: '乔布斯', weight: 1},
+                    {source: '比尔-盖茨', target: '乔布斯', weight: 6, name: '竞争对手'},
+                    {source: '乔纳森-艾夫', target: '乔布斯', weight: 1, name: '爱将'},
+                    {source: '蒂姆-库克', target: '乔布斯', weight: 1},
+                    {source: '龙-韦恩', target: '乔布斯', weight: 1},
+                    {source: '克拉拉-乔布斯', target: '保罗-乔布斯', weight: 1},
+                    {source: '奥巴马', target: '保罗-乔布斯', weight: 1},
+                    {source: '奥巴马', target: '克拉拉-乔布斯', weight: 1},
+                    {source: '奥巴马', target: '劳伦-鲍威尔', weight: 1},
+                    {source: '奥巴马', target: '史蒂夫-沃兹尼艾克', weight: 1},
+                    {source: '比尔-盖茨', target: '奥巴马', weight: 6},
+                    {source: '比尔-盖茨', target: '克拉拉-乔布斯', weight: 1},
+                    {source: '蒂姆-库克', target: '奥巴马', weight: 1}
                 ]
             }
         ]
@@ -916,156 +914,159 @@ $(function () {
 
     var gaugeChart = echarts.init(document.getElementById("echarts-gauge-chart"));
     var gaugeoption = {
-        tooltip : {
+        tooltip: {
             formatter: "{a} <br/>{c} {b}"
         },
         toolbox: {
-            show : true,
-            feature : {
-                mark : {show: true},
-                restore : {show: true},
-                saveAsImage : {show: true}
+            show: true,
+            feature: {
+                mark: {show: true},
+                restore: {show: true},
+                saveAsImage: {show: true}
             }
         },
-        series : [
+        series: [
             {
-                name:'速度',
-                type:'gauge',
-                min:0,
-                max:220,
-                splitNumber:11,
+                name: '速度',
+                type: 'gauge',
+                min: 0,
+                max: 220,
+                splitNumber: 11,
                 axisLine: {            // 坐标轴线
                     lineStyle: {       // 属性lineStyle控制线条样式
                         width: 10
                     }
                 },
                 axisTick: {            // 坐标轴小标记
-                    length :15,        // 属性length控制线长
+                    length: 15,        // 属性length控制线长
                     lineStyle: {       // 属性lineStyle控制线条样式
                         color: 'auto'
                     }
                 },
                 splitLine: {           // 分隔线
-                    length :20,         // 属性length控制线长
+                    length: 20,         // 属性length控制线长
                     lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
                         color: 'auto'
                     }
                 },
-                title : {
+                title: {
                     textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
                         fontWeight: 'bolder',
                         fontSize: 20,
                         fontStyle: 'italic'
                     }
                 },
-                detail : {
+                detail: {
                     textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
                         fontWeight: 'bolder'
                     }
                 },
-                data:[{value: 40, name: 'km/h'}]
+                data: [{value: 40, name: 'km/h'}]
             },
             {
-                name:'转速',
-                type:'gauge',
-                center : ['25%', '55%'],    // 默认全局居中
-                radius : '50%',
-                min:0,
-                max:7,
-                endAngle:45,
-                splitNumber:7,
+                name: '转速',
+                type: 'gauge',
+                center: ['25%', '55%'],    // 默认全局居中
+                radius: '50%',
+                min: 0,
+                max: 7,
+                endAngle: 45,
+                splitNumber: 7,
                 axisLine: {            // 坐标轴线
                     lineStyle: {       // 属性lineStyle控制线条样式
                         width: 8
                     }
                 },
                 axisTick: {            // 坐标轴小标记
-                    length :12,        // 属性length控制线长
+                    length: 12,        // 属性length控制线长
                     lineStyle: {       // 属性lineStyle控制线条样式
                         color: 'auto'
                     }
                 },
                 splitLine: {           // 分隔线
-                    length :20,         // 属性length控制线长
+                    length: 20,         // 属性length控制线长
                     lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
                         color: 'auto'
                     }
                 },
                 pointer: {
-                    width:5
+                    width: 5
                 },
-                title : {
+                title: {
                     offsetCenter: [0, '-30%'],       // x, y，单位px
                 },
-                detail : {
+                detail: {
                     textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
                         fontWeight: 'bolder'
                     }
                 },
-                data:[{value: 1.5, name: 'x1000 r/min'}]
+                data: [{value: 1.5, name: 'x1000 r/min'}]
             },
             {
-                name:'油表',
-                type:'gauge',
-                center : ['75%', '50%'],    // 默认全局居中
-                radius : '50%',
-                min:0,
-                max:2,
-                startAngle:135,
-                endAngle:45,
-                splitNumber:2,
+                name: '油表',
+                type: 'gauge',
+                center: ['75%', '50%'],    // 默认全局居中
+                radius: '50%',
+                min: 0,
+                max: 2,
+                startAngle: 135,
+                endAngle: 45,
+                splitNumber: 2,
                 axisLine: {            // 坐标轴线
                     lineStyle: {       // 属性lineStyle控制线条样式
-                        color: [[0.2, '#ff4500'],[0.8, '#48b'],[1, '#228b22']],
+                        color: [[0.2, '#ff4500'], [0.8, '#48b'], [1, '#228b22']],
                         width: 8
                     }
                 },
                 axisTick: {            // 坐标轴小标记
-                    splitNumber:5,
-                    length :10,        // 属性length控制线长
+                    splitNumber: 5,
+                    length: 10,        // 属性length控制线长
                     lineStyle: {       // 属性lineStyle控制线条样式
                         color: 'auto'
                     }
                 },
                 axisLabel: {
-                    formatter:function(v){
+                    formatter: function (v) {
                         switch (v + '') {
-                            case '0' : return 'E';
-                            case '1' : return 'Gas';
-                            case '2' : return 'F';
+                            case '0' :
+                                return 'E';
+                            case '1' :
+                                return 'Gas';
+                            case '2' :
+                                return 'F';
                         }
                     }
                 },
                 splitLine: {           // 分隔线
-                    length :15,         // 属性length控制线长
+                    length: 15,         // 属性length控制线长
                     lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
                         color: 'auto'
                     }
                 },
                 pointer: {
-                    width:2
+                    width: 2
                 },
-                title : {
+                title: {
                     show: false
                 },
-                detail : {
+                detail: {
                     show: false
                 },
-                data:[{value: 0.5, name: 'gas'}]
+                data: [{value: 0.5, name: 'gas'}]
             },
             {
-                name:'水表',
-                type:'gauge',
-                center : ['75%', '50%'],    // 默认全局居中
-                radius : '50%',
-                min:0,
-                max:2,
-                startAngle:315,
-                endAngle:225,
-                splitNumber:2,
+                name: '水表',
+                type: 'gauge',
+                center: ['75%', '50%'],    // 默认全局居中
+                radius: '50%',
+                min: 0,
+                max: 2,
+                startAngle: 315,
+                endAngle: 225,
+                splitNumber: 2,
                 axisLine: {            // 坐标轴线
                     lineStyle: {       // 属性lineStyle控制线条样式
-                        color: [[0.2, '#ff4500'],[0.8, '#48b'],[1, '#228b22']],
+                        color: [[0.2, '#ff4500'], [0.8, '#48b'], [1, '#228b22']],
                         width: 8
                     }
                 },
@@ -1073,30 +1074,33 @@ $(function () {
                     show: false
                 },
                 axisLabel: {
-                    formatter:function(v){
+                    formatter: function (v) {
                         switch (v + '') {
-                            case '0' : return 'H';
-                            case '1' : return 'Water';
-                            case '2' : return 'C';
+                            case '0' :
+                                return 'H';
+                            case '1' :
+                                return 'Water';
+                            case '2' :
+                                return 'C';
                         }
                     }
                 },
                 splitLine: {           // 分隔线
-                    length :15,         // 属性length控制线长
+                    length: 15,         // 属性length控制线长
                     lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
                         color: 'auto'
                     }
                 },
                 pointer: {
-                    width:2
+                    width: 2
                 },
-                title : {
+                title: {
                     show: false
                 },
-                detail : {
+                detail: {
                     show: false
                 },
-                data:[{value: 0.5, name: 'gas'}]
+                data: [{value: 0.5, name: 'gas'}]
             }
         ]
     };
@@ -1105,36 +1109,36 @@ $(function () {
 
     var funnelChart = echarts.init(document.getElementById("echarts-funnel-chart"));
     var funneloption = {
-        title : {
+        title: {
             text: '漏斗图',
             subtext: '纯属虚构'
         },
-        tooltip : {
+        tooltip: {
             trigger: 'item',
             formatter: "{a} <br/>{b} : {c}%"
         },
         legend: {
-            data : ['展现','点击','访问','咨询','订单']
+            data: ['展现', '点击', '访问', '咨询', '订单']
         },
-        calculable : true,
-        series : [
+        calculable: true,
+        series: [
             {
-                name:'漏斗图',
-                type:'funnel',
+                name: '漏斗图',
+                type: 'funnel',
                 width: '40%',
-                data:[
-                    {value:60, name:'访问'},
-                    {value:40, name:'咨询'},
-                    {value:20, name:'订单'},
-                    {value:80, name:'点击'},
-                    {value:100, name:'展现'}
+                data: [
+                    {value: 60, name: '访问'},
+                    {value: 40, name: '咨询'},
+                    {value: 20, name: '订单'},
+                    {value: 80, name: '点击'},
+                    {value: 100, name: '展现'}
                 ]
             },
             {
-                name:'金字塔',
-                type:'funnel',
-                x : '50%',
-                sort : 'ascending',
+                name: '金字塔',
+                type: 'funnel',
+                x: '50%',
+                sort: 'ascending',
                 itemStyle: {
                     normal: {
                         // color: 各异,
@@ -1143,12 +1147,12 @@ $(function () {
                         }
                     }
                 },
-                data:[
-                    {value:60, name:'访问'},
-                    {value:40, name:'咨询'},
-                    {value:20, name:'订单'},
-                    {value:80, name:'点击'},
-                    {value:100, name:'展现'}
+                data: [
+                    {value: 60, name: '访问'},
+                    {value: 40, name: '咨询'},
+                    {value: 20, name: '订单'},
+                    {value: 80, name: '点击'},
+                    {value: 100, name: '展现'}
                 ]
             }
         ]

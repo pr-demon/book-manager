@@ -9,13 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
 
     @GetMapping
-    public String index(){
+    public String index() {
         return "admin/index";
     }
 
     @GetMapping("/index")
-    public String to_index(){
+    public String to_index() {
         return "admin/index_v1";
-    };
+    }
+
+    ;
 
 }

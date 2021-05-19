@@ -46,8 +46,8 @@ public class BorrowInfo {
     /**
      * 书籍归还信息
      * -1：  默认值，用户已经预约，正在等待管理员审核
-     *  0：  用户还未还书
-     *  1：  用户已经还书
+     * 0：  用户还未还书
+     * 1：  用户已经还书
      */
     private Integer isReturn;
 

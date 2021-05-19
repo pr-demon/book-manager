@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.qlu.bean.Book;
 import com.qlu.bean.BookDonation;
 import com.qlu.bean.StackRoom;
-import com.qlu.common.utils.ImageUtils;
 import com.qlu.service.IBookDonationService;
 import com.qlu.service.IBookService;
 import com.qlu.service.IStackRoomService;
@@ -18,7 +17,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.thymeleaf.model.IModel;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -38,51 +36,54 @@ public class BookController {
 
     @Autowired
     private IStackRoomService stackRoomService;
+    @Autowired
+    private IBookDonationService bookDonationService;
 
     @GetMapping("/add")
-    public String to_add(Model model){
+    public String to_add(Model model) {
         List<StackRoom> list = stackRoomService.list();
-        model.addAttribute("stackRoomList",list);
+        model.addAttribute("stackRoomList", list);
         return "admin/book/add";
     }
 
     @GetMapping("/list")
     public String to_list(@RequestParam(defaultValue = "1") int pageNumber,
                           @RequestParam(defaultValue = "4") int pageSize,
-                          Model model){
-        Page<Book> page = new Page<>(pageNumber,pageSize);
+                          Model model) {
+        Page<Book> page = new Page<>(pageNumber, pageSize);
         page = bookService.page(page);
-        model.addAttribute("page",page);
+        model.addAttribute("page", page);
         return "admin/book/list";
     }
+
     @PostMapping("/search")
     public String to_list(@RequestParam(defaultValue = "1") int pageNumber,
                           @RequestParam(defaultValue = "4") int pageSize,
                           Book book,
-                          Model model){
-        Page<Book> page = new Page<>(pageNumber,pageSize);
+                          Model model) {
+        Page<Book> page = new Page<>(pageNumber, pageSize);
         QueryWrapper<Book> queryWrapper = new QueryWrapper<>();
-        if (book!=null){
-            if (book.getAuthor()!=null&&book.getAuthor()!=""){
-                queryWrapper.like("author",book.getAuthor());
+        if (book != null) {
+            if (book.getAuthor() != null && book.getAuthor() != "") {
+                queryWrapper.like("author", book.getAuthor());
             }
-            if (book.getBookName()!=null&&book.getBookName()!=""){
-                queryWrapper.like("book_name",book.getBookName());
+            if (book.getBookName() != null && book.getBookName() != "") {
+                queryWrapper.like("book_name", book.getBookName());
             }
-            if (book.getType()!=null&&book.getType()!=""){
-                queryWrapper.like("type",book.getType());
+            if (book.getType() != null && book.getType() != "") {
+                queryWrapper.like("type", book.getType());
             }
         }
 
-        page = bookService.page(page,queryWrapper);
-        model.addAttribute("page",page);
+        page = bookService.page(page, queryWrapper);
+        model.addAttribute("page", page);
         return "admin/book/list :: bookList";
     }
 
     @PostMapping("/add")
-    public String add(Book book){
+    public String add(Book book) {
         // 验证书籍数量
-        if (book.getBookCount() == null || book.getBookCount() < 1){
+        if (book.getBookCount() == null || book.getBookCount() < 1) {
             book.setBookCount(1);
         }
         book.setIsBorrow(0);
@@ -93,54 +94,53 @@ public class BookController {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteBook(@PathVariable int id){
+    public String deleteBook(@PathVariable int id) {
         boolean b = bookService.removeById(id);
         return "redirect:/admin/book/list";
     }
 
     @GetMapping("/edit/{id}")
-    public String to_editBook(@PathVariable int id,Model model){
+    public String to_editBook(@PathVariable int id, Model model) {
         List<StackRoom> list = stackRoomService.list();
-        model.addAttribute("stackRoomList",list);
+        model.addAttribute("stackRoomList", list);
         Book book = bookService.getById(id);
-        model.addAttribute("book",book);
+        model.addAttribute("book", book);
         return "/admin/book/edit";
     }
 
     @PostMapping("/edit")
-    public String editBook(Book book){
+    public String editBook(Book book) {
         boolean b = bookService.updateById(book);
         return "redirect:/admin/book/list";
     }
 
     @GetMapping("/editPicture/{id}")
-    public String to_editPicture(@PathVariable int id,Model model){
+    public String to_editPicture(@PathVariable int id, Model model) {
         Book book = bookService.getById(id);
-        model.addAttribute("book",book);
+        model.addAttribute("book", book);
         return "admin/book/editPicture";
     }
 
-
     @PostMapping("/editPicture")
-    public String editPicture(int id, MultipartFile file){
-        try{
+    public String editPicture(int id, MultipartFile file) {
+        try {
             String originalFilename = file.getOriginalFilename();
             int i = originalFilename.lastIndexOf(".");
             String suffix = originalFilename.substring(i);
             String uuid = UUID.randomUUID().toString();
-            String newName = uuid+suffix;
-            File dest = new File("F:/upload/"+newName);
-            if(!dest.getParentFile().exists()){ //判断文件父目录是否存在
+            String newName = uuid + suffix;
+            File dest = new File("F:/upload/" + newName);
+            if (!dest.getParentFile().exists()) { //判断文件父目录是否存在
                 dest.getParentFile().mkdir();
             }
-            String saveName = "/pic/"+newName;
+            String saveName = "/pic/" + newName;
             file.transferTo(dest);
             Book book = new Book();
             book.setId(id);
             book.setPicture(saveName);
             bookService.updateById(book);
             // ImageUtils.zoomImage("F:/upload/"+newName,"F:/upload/"+newName,430,500);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.fillInStackTrace();
         }
 
@@ -148,26 +148,22 @@ public class BookController {
     }
 
     @GetMapping("/bookDonationList")
-    public String bookDonationList(){
+    public String bookDonationList() {
         return "/admin/book/bookDonationList";
     }
-
-    @Autowired
-    private IBookDonationService bookDonationService;
 
     @RequestMapping("/donationListTable")
     @ResponseBody
     public com.qlu.common.bean.Page<BookDonation> donationListTable(
             @RequestParam(defaultValue = "1") int pageNum,
-            @RequestParam(defaultValue = "5") int pageSize){
+            @RequestParam(defaultValue = "5") int pageSize) {
         Page<BookDonation> page = bookDonationService.page(new Page<BookDonation>(pageNum, pageSize), new QueryWrapper<BookDonation>().eq("status", 0));
-       return new com.qlu.common.bean.Page<>(pageSize,page);
+        return new com.qlu.common.bean.Page<>(pageSize, page);
     }
 
 
-
     @PostMapping("/donationBookAgree")
-    public String donationBookAgree(Integer id,Integer srid){
+    public String donationBookAgree(Integer id, Integer srid) {
         BookDonation bookDonation = bookDonationService.getById(id);
         bookDonation.setStatus(1);
         bookDonationService.updateById((bookDonation));
@@ -191,7 +187,7 @@ public class BookController {
 
 
     @RequestMapping("/exportBookInfo")
-    public void exportBookInfo(HttpServletResponse response){
+    public void exportBookInfo(HttpServletResponse response) {
         XSSFWorkbook xssfWorkbook = new XSSFWorkbook();
         XSSFSheet sheet = xssfWorkbook.createSheet();
         Row row = sheet.createRow(0);
@@ -209,7 +205,7 @@ public class BookController {
         List<Book> list = bookService.list();
 
         int index = 1;
-        for (Book book: list){
+        for (Book book : list) {
 
             String bookName = book.getBookName();
             String author = book.getAuthor();
