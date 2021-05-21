@@ -18,6 +18,4 @@ public class IndexController {
         return "admin/index_v1";
     }
 
-    ;
-
 }

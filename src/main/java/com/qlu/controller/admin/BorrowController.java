@@ -101,6 +101,13 @@ public class BorrowController {
          *  id 是borrowinfo id
          * */
         BorrowInfo borrowInfo = borrowInfoService.getById(id);
+        /*
+        *   设置书籍应该归还的时间， 用于违规查询
+        * */
+        borrowInfo.setShouldReturnTime(borrowInfo.getReturnTime());
+        /*
+        *   设置书籍归还时间
+        * */
         borrowInfo.setReturnTime(new Date());
         borrowInfo.setIsReturn(1);
         borrowInfoService.updateById(borrowInfo);

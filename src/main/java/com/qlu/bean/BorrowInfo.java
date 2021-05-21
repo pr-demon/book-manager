@@ -40,6 +40,8 @@ public class BorrowInfo {
 
     /**
      * 归还时间
+     * isReturn == 0  应该归还的时间
+     * isReturn == 1  归还时间
      */
     private Date returnTime;
 
@@ -50,5 +52,12 @@ public class BorrowInfo {
      * 1：  用户已经还书
      */
     private Integer isReturn;
+
+
+    /*
+    *   该字段只用于违规处理，记录图书应该归还的时间
+    *   只有当isReturn=1, 用户已经还书时，该字段起作用
+    * */
+    private Date shouldReturnTime;
 
 }

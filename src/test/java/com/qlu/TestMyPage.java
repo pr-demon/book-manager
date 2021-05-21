@@ -1,7 +1,11 @@
 package com.qlu;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.qlu.bean.Book;
+import com.qlu.bean.BorrowInfo;
+import com.qlu.bean.vo.BookAndUserVo;
 import com.qlu.bean.vo.BorrowInfoAndBookAndUserVo;
+import com.qlu.service.IBookService;
 import com.qlu.service.IBorrowInfoService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +19,9 @@ public class TestMyPage {
 
     @Autowired
     private IBorrowInfoService borrowInfoService;
+
+    @Autowired
+    private IBookService bookService;
 
     @Test
     public void test1() {
@@ -36,4 +43,16 @@ public class TestMyPage {
         System.out.println(borrowInfoAndBookAndUser);
     }
 
+    @Test
+    public void testBookInfo(){
+        Page<BookAndUserVo> books =  bookService.getAllBookInfo(
+                new Page<>(1, 100)
+                ,4
+                , BorrowInfo.BORROW_CHECK_TIME
+                ,"pyt"
+        );
+        for (BookAndUserVo record : books.getRecords()) {
+            System.out.println(record.getId() + " " + record.getBookName() + " " + record.getType() + " " + record.toString());
+        }
+    }
 }

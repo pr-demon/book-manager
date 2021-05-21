@@ -118,6 +118,7 @@ CREATE TABLE `borrow_info`
   `borrow_time` datetime(0) NULL DEFAULT NULL COMMENT '借书时间',
   `return_time` datetime(0) NULL DEFAULT NULL COMMENT '归还时间',
   `is_return`   int(11)     NULL DEFAULT -1 COMMENT '归还信息',
+  `should_return_time` datetime(0) NULL DEFAULT NULL COMMENT '图书真正的归还时间',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 6

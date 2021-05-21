@@ -141,9 +141,24 @@
                     }
                 },
                 {
+                    field: "shouldReturnTime", title: "应归还时间",
+                    formatter: function (value, row, index) {
+                        return value.substr(0, 10);
+                    }
+                },
+                {
                     field: "returnTime", title: "归还时间",
                     formatter: function (value, row, index) {
                         return value.substr(0, 10);
+                    }
+                },
+                {
+                    field: "shouldReturnTime", title: "归还状态",
+                    formatter: function (value, row, index) {
+                        if (row.shouldReturnTime < row.returnTime){
+                            return "<b style='color: #ff0000;'>逾期还书</b>";
+                        }
+                        return "按时还书";
                     }
                 },
                 {

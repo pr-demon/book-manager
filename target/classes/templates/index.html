@@ -141,9 +141,12 @@
                                     <div class="col-md-2"></div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
+
+
                 <div class="row" id="showBook">
                     <!--                    显示图书数据-->
                 </div>
@@ -224,86 +227,107 @@
             data: {
                 pageNum: num,
                 pageSize: size,
-                bookName: bookName,
+                query: bookName,
             },
             dataType: "json",
             success: function (msg) {
-                pageNum = msg.pageNum;
-                pageSize = msg.pageSize;
-                next = msg.next;
-                pre = msg.pre;
-                first = msg.first;
-                last = msg.last;
-                pageCount = msg.pageCount;
-                total = msg.total;
-                console.log(msg);
-
-                let res = "";
-                let data = msg.rows;
-                for (let book of data) {
-                    let id = book.id;
-                    console.log(id);
-                    let isBorrow = "";
-                    if (book.isBorrow == 2) {
-                        isBorrow = "已借出";
-                    } else if (book.isBorrow == 1) {
-                        isBorrow = "已预约"
-                    } else {
-                        isBorrow = "在库"
-                    }
-                    let labelShow = book.isBorrow == 2 ? "label-danger" : "label-info";
-                    if (book.isBorrow == 2) {
-                        labelShow = "label-danger";
-                    } else if (book.isBorrow == 1) {
-                        labelShow = "label-success";
-                    } else {
-                        labelShow = "label-info";
-                    }
-                    let image = book.picture;
-                    let bookName = book.bookName;
-                    let author = book.author;
-                    let borrowTimes = book.borrowTimes;
-                    let type = book.type;
-                    res += '<a href="/book/info?id=' + id + '">\n' +
-                        '                        <div class="col-md-3">\n' +
-                        '                            <div class="ibox float-e-margins">\n' +
-                        '                                <div class="ibox-title">\n' +
-                        '                                    <span class="label ' + labelShow + ' pull-right">' + isBorrow + '</span>\n' +
-                        '                                    <h5>' + bookName + '</h5>\n' +
-                        '                                </div>\n' +
-                        '                                <div class="ibox-content text-center">\n' +
-                        '                                    <img width="200px" height="160px" class="img-responsive" src="' + image + '">\n' +
-                        '                                    <div class="hr-line-dashed" style="margin: 10px 0"></div>\n' +
-                        '<span class="badge badge-success pull-left">类型:' + type + '</span>' +
-                        '                                    <strong>' + author + '</strong>\n' +
-                        '<span class="badge badge-primary pull-right">借阅量:' + borrowTimes + '</span>' +
-                        '                                </div>\n' +
-                        '                            </div>\n' +
-                        '                        </div>\n' +
-                        '                    </a>';
-
-                }
-                $("#showBook").html(res);
-                $("#prePage").attr('disabled', false);
-                $("#nextPage").attr('disabled', false);
-                if (first) {
-                    $("#prePage").attr('disabled', true);
-                }
-                if (last) {
-                    $("#nextPage").attr('disabled', true);
-                }
-                let pageBtnGroup = "";
-                for (let i = 1; i < pageCount + 1; i++) {
-                    if (i == pageNum) {
-                        pageBtnGroup += '<button class="btn btn-white  active">' + i + '</button>';
-                    } else {
-                        pageBtnGroup += '<button onclick="changePage(' + i + ')" class="btn btn-white">' + i + '</button>';
-                    }
-                }
-                $("#pageBtnGroup").html(pageBtnGroup);
+                showBooks(msg);
             }
         })
     }
+
+
+
+    function showBooks(msg){
+        pageNum = msg.pageNum;
+        pageSize = msg.pageSize;
+        next = msg.next;
+        pre = msg.pre;
+        first = msg.first;
+        last = msg.last;
+        pageCount = msg.pageCount;
+        total = msg.total;
+        console.log(msg);
+
+        let res = "";
+        let data = msg.rows;
+        for (let book of data) {
+            let id = book.id;
+            console.log(book);
+            let isBorrow = "";
+            let labelShow = "label-success";
+            if (book.userBorrow != null){
+                isBorrow = book.userBorrow == -1 ? "已预约": "已借阅";
+                labelShow = "label-danger";
+            }else{
+                isBorrow = book.borrowCount < book.bookCount ? "可预约": "不可预约";
+                if (book.bookCount <= book.borrowCount){
+                    labelShow = "label-danger";
+                }
+            }
+
+
+            // if (book.isBorrow == 2) {
+            //     isBorrow = "已借出";
+            // } else if (book.isBorrow == 1) {
+            //     isBorrow = "已预约"
+            // } else {
+            //     isBorrow = "在库"
+            // }
+            // let labelShow = book.isBorrow == 2 ? "label-danger" : "label-info";
+            // if (book.isBorrow == 2) {
+            //     labelShow = "label-danger";
+            // } else if (book.isBorrow == 1) {
+            //     labelShow = "label-success";
+            // } else {
+            //     labelShow = "label-info";
+            // }
+
+            let image = book.picture;
+            let bookName = book.bookName;
+            let author = book.author;
+            // 可预约数量
+            let borrowTimes = book.bookCount - book.borrowCount;
+            let type = book.type;
+            res += '<a href="/book/info?id=' + id + '">\n' +
+                '                        <div class="col-md-3">\n' +
+                '                            <div class="ibox float-e-margins">\n' +
+                '                                <div class="ibox-title">\n' +
+                '                                    <span class="label ' + labelShow + ' pull-right">' + isBorrow + '</span>\n' +
+                '                                    <h5>' + bookName + '</h5>\n' +
+                '                                </div>\n' +
+                '                                <div class="ibox-content text-center">\n' +
+                '                                    <img width="200px" height="160px" class="img-responsive" src="' + image + '">\n' +
+                '                                    <div class="hr-line-dashed" style="margin: 10px 0"></div>\n' +
+                '<span class="badge badge-success pull-left">类型:' + type + '</span>' +
+                '                                    <strong>' + author + '</strong>\n' +
+                '<span class="badge badge-primary pull-right">可预约量:' + borrowTimes + '</span>' +
+                '                                </div>\n' +
+                '                            </div>\n' +
+                '                        </div>\n' +
+                '                    </a>';
+
+        }
+        $("#showBook").html(res);
+        $("#prePage").attr('disabled', false);
+        $("#nextPage").attr('disabled', false);
+        if (first) {
+            $("#prePage").attr('disabled', true);
+        }
+        if (last) {
+            $("#nextPage").attr('disabled', true);
+        }
+        let pageBtnGroup = "";
+        for (let i = 1; i < pageCount + 1; i++) {
+            if (i == pageNum) {
+                pageBtnGroup += '<button class="btn btn-white  active">' + i + '</button>';
+            } else {
+                pageBtnGroup += '<button onclick="changePage(' + i + ')" class="btn btn-white">' + i + '</button>';
+            }
+        }
+        $("#pageBtnGroup").html(pageBtnGroup);
+    }
+
 
     $("#search-btn").click(function () {
         console.log("click");

@@ -1127,12 +1127,18 @@
       <DefaultExpression>-1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="273" parent="240" name="PRIMARY">
+    <column id="273" parent="240" name="should_return_time">
+      <Position>7</Position>
+      <Comment>图书真正的归还时间</Comment>
+      <DataType>datetime|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="274" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="274" parent="241" name="id">
+    <column id="275" parent="241" name="id">
       <Position>1</Position>
       <Comment>评论id</Comment>
       <DataType>int(11)|0s</DataType>
@@ -1140,36 +1146,36 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="241" name="bid">
+    <column id="276" parent="241" name="bid">
       <Position>2</Position>
       <Comment>书籍id</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="276" parent="241" name="info">
+    <column id="277" parent="241" name="info">
       <Position>3</Position>
       <Comment>评论信息</Comment>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="277" parent="241" name="create_time">
+    <column id="278" parent="241" name="create_time">
       <Position>4</Position>
       <Comment>创建评论的时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="241" name="username">
+    <column id="279" parent="241" name="username">
       <Position>5</Position>
       <Comment>评论人的姓名</Comment>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="279" parent="241" name="PRIMARY">
+    <key id="280" parent="241" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="280" parent="242" name="id">
+    <column id="281" parent="242" name="id">
       <Position>1</Position>
       <Comment>书库id</Comment>
       <DataType>int(11)|0s</DataType>
@@ -1177,24 +1183,24 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="281" parent="242" name="name">
+    <column id="282" parent="242" name="name">
       <Position>2</Position>
       <Comment>书库名称</Comment>
       <DataType>varchar(64)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="282" parent="242" name="location">
+    <column id="283" parent="242" name="location">
       <Position>3</Position>
       <Comment>书库地址</Comment>
       <DataType>varchar(64)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="283" parent="242" name="PRIMARY">
+    <key id="284" parent="242" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="284" parent="243" name="id">
+    <column id="285" parent="243" name="id">
       <Position>1</Position>
       <Comment>用户id</Comment>
       <DataType>int(11)|0s</DataType>
@@ -1202,40 +1208,40 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="243" name="username">
+    <column id="286" parent="243" name="username">
       <Position>2</Position>
       <Comment>用户名</Comment>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="243" name="email">
+    <column id="287" parent="243" name="email">
       <Position>3</Position>
       <Comment>电子邮箱</Comment>
       <DataType>varchar(32)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="287" parent="243" name="phone">
+    <column id="288" parent="243" name="phone">
       <Position>4</Position>
       <Comment>电话号码</Comment>
       <DataType>varchar(12)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="243" name="password">
+    <column id="289" parent="243" name="password">
       <Position>5</Position>
       <Comment>密码</Comment>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="243" name="level">
+    <column id="290" parent="243" name="level">
       <Position>6</Position>
       <Comment>用户级别(0普通用户,1管理员,2超级管理员)</Comment>
       <DataType>int(2)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="290" parent="243" name="PRIMARY">
+    <key id="291" parent="243" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

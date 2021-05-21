@@ -5,6 +5,7 @@ import com.qlu.bean.Book;
 import com.qlu.bean.BorrowInfo;
 import com.qlu.bean.StackRoom;
 import com.qlu.bean.User;
+import com.qlu.bean.vo.BookAndUserVo;
 import com.qlu.common.bean.Page;
 import com.qlu.service.IBookService;
 import com.qlu.service.IBorrowInfoService;
@@ -36,10 +37,12 @@ public class FrontBookController {
 
     @RequestMapping("/list")
     @ResponseBody
-    public Page<Book> queryList(@RequestParam(defaultValue = "1") int pageNum,
+    public Page<BookAndUserVo> queryList(@RequestParam(defaultValue = "1") int pageNum,
                                 @RequestParam(defaultValue = "8") int pageSize,
-                                Book book) {
+                                @RequestParam(defaultValue = "") String query
+                                ,HttpSession session) {
         System.out.println("=====");
+        /*
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Book> mybatisPage =
                 new com.baomidou.mybatisplus.extension.plugins.pagination.Page<>(pageNum, pageSize);
         QueryWrapper<Book> bookQueryWrapper = new QueryWrapper<>();
@@ -64,13 +67,28 @@ public class FrontBookController {
         bookQueryWrapper.orderByDesc("borrow_times");
         bookService.page(mybatisPage, bookQueryWrapper);
         Page<Book> page = new Page<>(pageSize, mybatisPage);
+        */
+
+        User user = (User)session.getAttribute("user");
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<BookAndUserVo> books =  bookService.getAllBookInfo(
+                new com.baomidou.mybatisplus.extension.plugins.pagination.Page<>(pageNum, pageSize)
+                ,user.getId()
+                ,BorrowInfo.BORROW_CHECK_TIME
+                ,query
+        );
+        /*
+        System.out.println("首页查询， 用户ID： " + user.getId());
+        for (BookAndUserVo record : books.getRecords()) {
+            System.out.println(record.getId() + " " + record.toString());
+        }
+        */
+        Page<BookAndUserVo> page = new Page<>(pageSize, books);
         return page;
     }
 
     @RequestMapping("/search")
     @ResponseBody
     public List<Book> search(String query) {
-
         QueryWrapper<Book> queryWrapper = new QueryWrapper<>();
         queryWrapper.like("book_name", query).or().like("author", query).or().like("type", query);
         List<Book> list = bookService.list(queryWrapper);
