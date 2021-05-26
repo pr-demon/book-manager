@@ -7,6 +7,7 @@ import com.qlu.bean.vo.BookAndUserVo;
 import com.qlu.bean.vo.BorrowInfoAndBookAndUserVo;
 import com.qlu.service.IBookService;
 import com.qlu.service.IBorrowInfoService;
+import com.qlu.service.IPunishService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class TestMyPage {
 
     @Autowired
     private IBookService bookService;
+
+    @Autowired
+    private IPunishService punishService;
 
     @Test
     public void test1() {
@@ -54,5 +58,10 @@ public class TestMyPage {
         for (BookAndUserVo record : books.getRecords()) {
             System.out.println(record.getId() + " " + record.getBookName() + " " + record.getType() + " " + record.toString());
         }
+    }
+
+    @Test
+    public void testPunish(){
+        punishService.list();
     }
 }

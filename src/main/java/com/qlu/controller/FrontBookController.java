@@ -1,14 +1,12 @@
 package com.qlu.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.qlu.bean.Book;
-import com.qlu.bean.BorrowInfo;
-import com.qlu.bean.StackRoom;
-import com.qlu.bean.User;
+import com.qlu.bean.*;
 import com.qlu.bean.vo.BookAndUserVo;
 import com.qlu.common.bean.Page;
 import com.qlu.service.IBookService;
 import com.qlu.service.IBorrowInfoService;
+import com.qlu.service.IPunishService;
 import com.qlu.service.IStackRoomService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +16,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -34,6 +34,8 @@ public class FrontBookController {
 
     @Autowired
     private IBorrowInfoService borrowInfoService;
+    @Autowired
+    private IPunishService punishService;
 
     @RequestMapping("/list")
     @ResponseBody
@@ -113,6 +115,11 @@ public class FrontBookController {
         return 0;
     }
 
+    private boolean existNotReturnBook(int uid){
+        List<BorrowInfo> borrowInfos = borrowInfoService.list(new QueryWrapper<BorrowInfo>().eq("uid", uid).eq("is_return", 0).apply(" return_time < now()"));
+        return borrowInfos != null && borrowInfos.size() > 0;
+    }
+
     public int isBorrowAble(int userId, int bookId) {
         // 查看用户是否已经借到了这本书
         List<BorrowInfo> borrowInfos = borrowInfoService.list(new QueryWrapper<BorrowInfo>().eq("uid", userId).eq("bid", bookId).eq("is_return", 0));
@@ -129,6 +136,18 @@ public class FrontBookController {
         int borrowOutCount = bookBorrowedCount(bookId);
         if (bookCount <= borrowCheckCount + borrowOutCount) {
             return -3;
+        }
+        /*
+        *   查看用户是否有：
+        *       1. 超时未还的书籍
+        *       2. 用户当前处于惩戒期中
+        * */
+        if (existNotReturnBook(userId)){
+            return -4;
+        }
+        Punish punish = punishService.getPunish(userId);
+        if (punish != null && punish.getReleaseTime().after(new Date())){
+            return -5;
         }
         return 0;
     }
@@ -149,6 +168,11 @@ public class FrontBookController {
         /* 查看当前用户是否可以借阅这本书 */
         int code = isBorrowAble(user.getId(), book.getId());
         model.addAttribute("isBorrowAble", code);
+
+        if (code == -5){
+            String releaseTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(punishService.getPunish(user.getId()).getReleaseTime());
+            model.addAttribute("releaseTime", releaseTime);
+        }
 
         return "/book/info";
     }

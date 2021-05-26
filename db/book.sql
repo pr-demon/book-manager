@@ -233,4 +233,21 @@ VALUES (13, '1234', '1049022252@qq.com', '13355174706', '12', 0);
 INSERT INTO `user`
 VALUES (14, 'zhangsans', '1049022252@qq.cn', '13355174706', '12', 0);
 
+-- ----------------------------
+-- Table structure for punish
+-- ----------------------------
+DROP TABLE IF EXISTS `punish`;
+CREATE TABLE `punish`
+(
+  `id`          int(11)     NOT NULL AUTO_INCREMENT,
+  `uid`         int(11)     NULL DEFAULT NULL COMMENT '用户的id',
+  `release_time` datetime(0) NULL DEFAULT NULL COMMENT '释放时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB
+  AUTO_INCREMENT = 6
+  CHARACTER SET = utf8mb4
+  COLLATE = utf8mb4_general_ci
+  ROW_FORMAT = Dynamic;
+
+
 SET FOREIGN_KEY_CHECKS = 1;

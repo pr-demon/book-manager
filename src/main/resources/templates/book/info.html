@@ -64,6 +64,12 @@
                                 <button class="btn btn-primary btn-lg" disabled role="button"
                                         th:if="${isBorrowAble} eq '-3'">该书的借阅量已经达到最大值
                                 </button>
+                                <button class="btn btn-primary btn-lg" disabled role="button"
+                                        th:if="${isBorrowAble} eq '-4'">您有超时未还的图书
+                                </button>
+                                <button class="btn btn-primary btn-lg" disabled role="button"
+                                        th:if="${isBorrowAble} eq '-5'">您现在处于惩戒期中, 预计 <span th:text="${releaseTime}"></span> 之后可重新借阅图书
+                                </button>
                                 <button class="btn btn-primary btn-lg" id="borrowBtn" role="button"
                                         th:if="${isBorrowAble} eq '0'">预约
                                 </button>

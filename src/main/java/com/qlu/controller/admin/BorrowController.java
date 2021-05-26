@@ -1,10 +1,12 @@
 package com.qlu.controller.admin;
 
 import com.qlu.bean.BorrowInfo;
+import com.qlu.bean.User;
 import com.qlu.bean.vo.BorrowInfoAndBookAndUserVo;
 import com.qlu.common.bean.Page;
 import com.qlu.service.IBookService;
 import com.qlu.service.IBorrowInfoService;
+import com.qlu.service.IPunishService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 
 @Controller
@@ -23,6 +26,8 @@ public class BorrowController {
     private IBorrowInfoService borrowInfoService;
     @Autowired
     private IBookService bookService;
+    @Autowired
+    private IPunishService punishService;
 
     @GetMapping("/borrowInfo")
     public String to_borrowInfo() {
@@ -113,18 +118,11 @@ public class BorrowController {
         borrowInfoService.updateById(borrowInfo);
 
         /*
-        //此条借阅信息更改
-        BorrowInfo borrowInfo = borrowInfoService.getById(id);
-        //归还
-        borrowInfo.setIsReturn(1);
-        borrowInfo.setReturnTime(new Date());
-        borrowInfoService.updateById(borrowInfo);
-
-        //还书籍
-        Book book = bookService.getById(bid);
-        book.setIsBorrow(0);
-        bookService.updateById(book);
-        */
+        *   检查用户是否超时归还
+        * */
+        if (borrowInfo.getShouldReturnTime().before(borrowInfo.getReturnTime())){
+            punishService.addPunish(borrowInfo.getUid());
+        }
 
         return "success";
     }
